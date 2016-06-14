@@ -1,0 +1,60 @@
+Hi Everyone,
+
+Here are week 4 notes, hope they are usefull to you. As always please forgive me for grammar and spelling mistakes.
+
+Living without constrains
+In mongoDB there are no foreign_key constrains, so there’s no way that we can guaranteed that we associated a document to another one that really exists so the best way to get around this problem is by: Embedding documents. When we embed documents we guaranteed that we are adding thing to a document that already exists.
+Living without Transactions
+In mongoDb there’s no transactions, so there’s no way that we can perform operations on several documents own one single command. So there’s no way that we can comply with the ACID principles. The way to get around this is by:
+Restructuring: this means that we are doing we are embedding documents that meas that all the information that we need regarding a resource lives inside in one single document so with only one atomic operation we can modify all that we need without relying on transactions.
+Tolerate
+Implement software checks: check systematically for inconsistencies in the DB
+Relations:
+
+One To One: Options [embed or link] :
+
+Considerations to have on wether to embed or link:
+frequency of acces: If you access all of times one part of the relation but not the other one and the other one is really big maybe it’s better not to embed
+growing patter: if i have to constantly update one part but no the other maybe its better to not embed
+Document size: maybe embedding can lead to documents larger than 16mb
+Atomic operations: if i want to have atomic operations i need to embed.
+One to Many:
+
+The question here really is if it really is One to Many or One to Few, is the relations it’s really one to many there’s no other way to do it other than by Linking, if its is one to few we could embed the documents.
+
+Many to Many:
+
+Embed at your own peril, but the best way is probably by using Linking in which we have an array of the foreign_keys, best way to only have it in only one direction but is also good to have it in both directions depending on data access patterns.
+
+Multikey indexes:
+
+When you are linking, specially own Many to Many relationships theres always to obvious queries that you would like to perform. For example if you have the Students collections and the Teachers collections. you can put an array inside the student document with the ID of the Teachers that that student has had. Example:
+
+Student: { _id: 1, name: "juan", teachers: [1,2,3,4] }
+
+Teacher: { _id: 1, name: "Tony Stark" }
+
+With this example if you would like to do a query for getting all the teachers of a student you could do:
+
+const teachers = db.students.findOne({name: "juan"}, {teachers: 1})
+db.teachers.find({_id: {$in: teachers}})
+If you would like to get all the students that have had a particularly teacher your benefit of using Multikey Indexes:
+
+First add the mutikey index to the array of teachers in the student document with this command:
+db.students.ensureIndex( {teachers: 1} )
+Then query the students field using the $all operators - db.students.find({ teachers: { $all: [1 , 2] } }) // this is going to fins all students with teachers 1 and 2
+.explain() at the end of the query shows how mongo did the operation
+
+Modeling Trees:
+
+Trees are parent children relationships like the one that you would find in a categories collection where a category has children categories a parent category and ancestor categories.
+
+The best way to model this is with a document like this one. In this way I know how is my immediate parent, and also all my others ancestors, so if i want to get all the children of one category i could do:
+
+db.categories.find({ancestors: 34), this way Im searching for all categories that have my id as one of their ancestor.
+
+{ _id: 34, name : "Snorkeling", parent_id: 12, ancestors: [12, 35, 90] }
+
+Denormalization Summary:
+
+1:1 -> Embed 1: Many -> Embed putting the many inside the One Many: Many -> Link and use multi key Indexes

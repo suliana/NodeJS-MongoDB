@@ -1,0 +1,85 @@
+Hi Everyone,
+
+I have been really busy last weeks so week 5 and 6 notes are a downgrade on quality, sorry about that, but please feel free to contribute things to the notes so that we can all improve them.
+
+As always happy coding to all of you.
+
+Performance
+
+Storage Engines:
+
+MMAP: Old default storage engine.
+Advantages:
+Power of tow document paddding
+In place update of documents
+Disadvantages
+No document level concurrency
+No compression of data
+Wired Tiger: It’s the default storage engine. In order to activate you need to pass an additional flag when turning on the mongo server: mongod -dpath WT -storageEngine wiredTiger
+Indexes:
+
+Indexes are a way to represent organiced data within a collection. When a collection is organized or sorted we can query data out of it much faster because the engine doesn’t have to traverse the hole collection in order to find the documents it needs. Instead when we have an index, the query will use a BTREE algorithm to get much fasters reads from the database.
+
+Advantages:
+Much fasters read of data
+Costs
+Slower writes
+Higher space used in both memory and disk
+Due to this limitations is advised to only have indexes on fields that really need them. When they are use with good care, the advantages greatly surpass the costs.
+
+If we add compound indexes to a collection for example collection foo has indexes on fields a,b,c in that order. We can query this collection in the following way :
+
+Using:
+
+a,b,c
+a,b
+a, c
+But we can not query using on an index if we sidestep the index that precedes it :
+
+Wrong examples:
+
+b,c
+c
+Adding Indexes:
+
+Single field index: db.students.createIndex({ student_id: 1 })
+Compound index: db.students.createIndex({ student_id: 1, class_id: -1 })
+Destroying Indexes:
+
+db.students.dropIndex({ student_id: 1 })
+Getting all indexes of a collection:
+
+db.students.getIndexes()
+Multikey Indexes:
+
+This are indexes that work inside an array . there can not vibe a compound multi key index with both films having an array as value
+
+Unique Indexes:
+
+This are indexes that ensure that there no two documents with the same value for key exists inside the collection. we can create them like this :
+
+db.students.createIndex({ student_id: 1}, {unique: true })
+Sparse indexes
+
+A sparse index allows me to create a unique index on a wild that may not be present in all documents of a collection. It also reduces the amount of space that the index occupies. Finally if i ty to sort based on the sparse index field the database will revert to a full collection scan because it knows that by using the index it will omit documents.
+
+db.students.createIndex({ student_id: 1}, {unique: true, sparse: true })
+Covered queries
+
+A covered query is one that can be satisfy by only using the index and not going to the document itself. They are extremely performant, and the way to create them is by doing a query in which we project only the fields that are part of the index or a subset of the index. Example:
+
+Example collection indexes: { name : 1, dob : 1 } { _id : 1 } { hair : 1, name : 1 }
+
+In the queries below only etc last one is a cover query with the set of indexes above.
+
+Geospatial Indexes
+
+2d
+I can add a index to a field which has an array as value with two elements x, y coordinates
+With this in place I can use the $near operator to sort things by which one is nearer - Example: - db.place.createIndex({location: ‘2d’}) - db.places.find({location: {$near: [74, 140]}}).limit(3)
+Spherical
+
+In this way we can use longitude and latitude as our x,y points is works based on the geojson spec
+Example:
+
+db.stores.find({loc: {$near:{$geometry: {type: "Point", coordinates: [-130, 39] },$maxDistance: 1000000}}})

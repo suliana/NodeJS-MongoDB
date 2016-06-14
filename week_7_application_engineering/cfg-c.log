@@ -1,0 +1,819 @@
+2016-05-03T10:31:33.197+0100 I CONTROL  [initandlisten] MongoDB starting : pid=31194 port=57042 dbpath=/data/config/config-c master=1 64-bit host=Sulianas-MacBook-Pro.local
+2016-05-03T10:31:33.198+0100 I CONTROL  [initandlisten] db version v3.2.1
+2016-05-03T10:31:33.198+0100 I CONTROL  [initandlisten] git version: a14d55980c2cdc565d4704a7e3ad37e4e535c1b2
+2016-05-03T10:31:33.198+0100 I CONTROL  [initandlisten] allocator: system
+2016-05-03T10:31:33.198+0100 I CONTROL  [initandlisten] modules: none
+2016-05-03T10:31:33.198+0100 I CONTROL  [initandlisten] build environment:
+2016-05-03T10:31:33.198+0100 I CONTROL  [initandlisten]     distarch: x86_64
+2016-05-03T10:31:33.198+0100 I CONTROL  [initandlisten]     target_arch: x86_64
+2016-05-03T10:31:33.198+0100 I CONTROL  [initandlisten] options: { net: { port: 57042 }, processManagement: { fork: true }, sharding: { clusterRole: "configsvr" }, storage: { dbPath: "/data/config/config-c", mmapv1: { smallFiles: true } }, systemLog: { destination: "file", path: "cfg-c.log" } }
+2016-05-03T10:31:33.201+0100 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=9G,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2016-05-03T10:31:33.791+0100 W STORAGE  [initandlisten] Detected configuration for non-active storage engine mmapv1 when current storage engine is wiredTiger
+2016-05-03T10:31:33.909+0100 I REPL     [initandlisten] ******
+2016-05-03T10:31:33.909+0100 I REPL     [initandlisten] creating replication oplog of size: 5MB...
+2016-05-03T10:31:33.982+0100 I STORAGE  [initandlisten] Starting WiredTigerRecordStoreThread local.oplog.$main
+2016-05-03T10:31:33.982+0100 I STORAGE  [initandlisten] The size storer reports that the oplog contains 0 records totaling to 0 bytes
+2016-05-03T10:31:33.982+0100 I STORAGE  [initandlisten] Scanning the oplog to determine where to place markers for truncation
+2016-05-03T10:31:34.217+0100 I REPL     [initandlisten] ******
+2016-05-03T10:31:34.218+0100 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/data/config/config-c/diagnostic.data'
+2016-05-03T10:31:34.218+0100 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2016-05-03T10:31:34.328+0100 I NETWORK  [initandlisten] waiting for connections on port 57042
+2016-05-03T10:31:34.486+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53435 #1 (1 connection now open)
+2016-05-03T10:31:34.488+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53438 #2 (2 connections now open)
+2016-05-03T10:31:34.490+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53441 #3 (3 connections now open)
+2016-05-03T10:31:34.492+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53444 #4 (4 connections now open)
+2016-05-03T10:31:34.801+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53447 #5 (5 connections now open)
+2016-05-03T10:31:34.801+0100 I SHARDING [conn5] remote client 127.0.0.1:53447 initialized this host as shard config
+2016-05-03T10:31:34.925+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53450 #6 (6 connections now open)
+2016-05-03T10:31:35.327+0100 I INDEX    [conn5] build index on: config.chunks properties: { v: 1, unique: true, key: { ns: 1, min: 1 }, name: "ns_1_min_1", ns: "config.chunks" }
+2016-05-03T10:31:35.327+0100 I INDEX    [conn5] 	 building index using bulk method
+2016-05-03T10:31:35.355+0100 I INDEX    [conn5] build index done.  scanned 0 total records. 0 secs
+2016-05-03T10:31:35.356+0100 I COMMAND  [conn5] command config.system.indexes command: insert { insert: "system.indexes", documents: [ { ns: "config.chunks", key: { ns: 1, min: 1 }, name: "ns_1_min_1", unique: true } ], writeConcern: { w: "majority", wtimeout: 0 } } ninserted:1 keyUpdates:0 writeConflicts:0 numYields:0 reslen:41 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 3 } }, Metadata: { acquireCount: { w: 2 } } } protocol:op_command 267ms
+2016-05-03T10:31:35.449+0100 I INDEX    [conn5] build index on: config.chunks properties: { v: 1, unique: true, key: { ns: 1, shard: 1, min: 1 }, name: "ns_1_shard_1_min_1", ns: "config.chunks" }
+2016-05-03T10:31:35.449+0100 I INDEX    [conn5] 	 building index using bulk method
+2016-05-03T10:31:35.499+0100 I INDEX    [conn5] build index done.  scanned 0 total records. 0 secs
+2016-05-03T10:31:35.499+0100 I COMMAND  [conn5] command config.system.indexes command: insert { insert: "system.indexes", documents: [ { ns: "config.chunks", key: { ns: 1, shard: 1, min: 1 }, name: "ns_1_shard_1_min_1", unique: true } ], writeConcern: { w: "majority", wtimeout: 0 } } ninserted:1 keyUpdates:0 writeConflicts:0 numYields:0 reslen:41 locks:{ Global: { acquireCount: { r: 2, w: 2 } }, Database: { acquireCount: { w: 1, W: 1 } }, Collection: { acquireCount: { w: 2 } }, Metadata: { acquireCount: { w: 1 } } } protocol:op_command 105ms
+2016-05-03T10:31:35.655+0100 I INDEX    [conn5] build index on: config.chunks properties: { v: 1, unique: true, key: { ns: 1, lastmod: 1 }, name: "ns_1_lastmod_1", ns: "config.chunks" }
+2016-05-03T10:31:35.655+0100 I INDEX    [conn5] 	 building index using bulk method
+2016-05-03T10:31:35.727+0100 I INDEX    [conn5] build index done.  scanned 0 total records. 0 secs
+2016-05-03T10:31:35.728+0100 I COMMAND  [conn5] command config.system.indexes command: insert { insert: "system.indexes", documents: [ { ns: "config.chunks", key: { ns: 1, lastmod: 1 }, name: "ns_1_lastmod_1", unique: true } ], writeConcern: { w: "majority", wtimeout: 0 } } ninserted:1 keyUpdates:0 writeConflicts:0 numYields:0 reslen:41 locks:{ Global: { acquireCount: { r: 2, w: 2 } }, Database: { acquireCount: { w: 1, W: 1 } }, Collection: { acquireCount: { w: 2 } }, Metadata: { acquireCount: { w: 1 } } } protocol:op_command 161ms
+2016-05-03T10:31:35.971+0100 I INDEX    [conn5] build index on: config.shards properties: { v: 1, unique: true, key: { host: 1 }, name: "host_1", ns: "config.shards" }
+2016-05-03T10:31:35.971+0100 I INDEX    [conn5] 	 building index using bulk method
+2016-05-03T10:31:36.019+0100 I INDEX    [conn5] build index done.  scanned 0 total records. 0 secs
+2016-05-03T10:31:36.019+0100 I COMMAND  [conn5] command config.system.indexes command: insert { insert: "system.indexes", documents: [ { ns: "config.shards", key: { host: 1 }, name: "host_1", unique: true } ], writeConcern: { w: "majority", wtimeout: 0 } } ninserted:1 keyUpdates:0 writeConflicts:0 numYields:0 reslen:41 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 3 } }, Metadata: { acquireCount: { w: 2 } } } protocol:op_command 239ms
+2016-05-03T10:31:36.118+0100 I INDEX    [conn5] build index on: config.locks properties: { v: 1, key: { ts: 1 }, name: "ts_1", ns: "config.locks" }
+2016-05-03T10:31:36.118+0100 I INDEX    [conn5] 	 building index using bulk method
+2016-05-03T10:31:36.135+0100 I INDEX    [conn5] build index done.  scanned 1 total records. 0 secs
+2016-05-03T10:31:36.213+0100 I INDEX    [conn5] build index on: config.locks properties: { v: 1, key: { state: 1, process: 1 }, name: "state_1_process_1", ns: "config.locks" }
+2016-05-03T10:31:36.213+0100 I INDEX    [conn5] 	 building index using bulk method
+2016-05-03T10:31:36.244+0100 I INDEX    [conn5] build index done.  scanned 1 total records. 0 secs
+2016-05-03T10:31:36.307+0100 I INDEX    [conn5] build index on: config.lockpings properties: { v: 1, key: { ping: 1 }, name: "ping_1", ns: "config.lockpings" }
+2016-05-03T10:31:36.307+0100 I INDEX    [conn5] 	 building index using bulk method
+2016-05-03T10:31:36.325+0100 I INDEX    [conn5] build index done.  scanned 1 total records. 0 secs
+2016-05-03T10:31:36.519+0100 I INDEX    [conn5] build index on: config.tags properties: { v: 1, unique: true, key: { ns: 1, min: 1 }, name: "ns_1_min_1", ns: "config.tags" }
+2016-05-03T10:31:36.519+0100 I INDEX    [conn5] 	 building index using bulk method
+2016-05-03T10:31:36.537+0100 I INDEX    [conn5] build index done.  scanned 0 total records. 0 secs
+2016-05-03T10:31:36.537+0100 I COMMAND  [conn5] command config.system.indexes command: insert { insert: "system.indexes", documents: [ { ns: "config.tags", key: { ns: 1, min: 1 }, name: "ns_1_min_1", unique: true } ], writeConcern: { w: "majority", wtimeout: 0 } } ninserted:1 keyUpdates:0 writeConflicts:0 numYields:0 reslen:41 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 3 } }, Metadata: { acquireCount: { w: 2 } } } protocol:op_command 176ms
+2016-05-03T10:31:36.548+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53456 #7 (7 connections now open)
+2016-05-03T10:31:37.032+0100 I COMMAND  [conn4] command config.actionlog command: create { create: "actionlog", size: 2097152, capped: true } keyUpdates:0 writeConflicts:0 numYields:0 reslen:22 locks:{ Global: { acquireCount: { r: 2, w: 2 } }, Database: { acquireCount: { w: 1, W: 1 } }, Collection: { acquireCount: { w: 1 } }, Metadata: { acquireCount: { w: 1 } } } protocol:op_command 109ms
+2016-05-03T10:32:36.605+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53520 #8 (8 connections now open)
+2016-05-03T10:32:37.068+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53531 #9 (9 connections now open)
+2016-05-03T10:32:37.075+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53536 #10 (10 connections now open)
+2016-05-03T10:32:37.082+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53541 #11 (11 connections now open)
+2016-05-03T10:35:56.469+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53632 #12 (12 connections now open)
+2016-05-03T10:35:56.472+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53635 #13 (13 connections now open)
+2016-05-03T10:35:56.646+0100 I NETWORK  [conn9] end connection 127.0.0.1:53531 (12 connections now open)
+2016-05-03T10:35:56.648+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53638 #14 (13 connections now open)
+2016-05-03T10:35:56.702+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53642 #15 (14 connections now open)
+2016-05-03T10:35:58.931+0100 I NETWORK  [conn10] end connection 127.0.0.1:53536 (13 connections now open)
+2016-05-03T10:35:58.933+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53649 #16 (14 connections now open)
+2016-05-03T10:35:59.129+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53653 #17 (15 connections now open)
+2016-05-03T10:36:02.831+0100 I NETWORK  [conn11] end connection 127.0.0.1:53541 (14 connections now open)
+2016-05-03T10:36:02.832+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53661 #18 (15 connections now open)
+2016-05-03T10:37:16.038+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53689 #19 (16 connections now open)
+2016-05-03T10:40:45.275+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53754 #20 (17 connections now open)
+2016-05-03T10:46:34.264+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T11:01:34.318+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T11:16:34.386+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T11:31:34.447+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T11:46:38.369+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T12:01:43.528+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T12:16:48.133+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T12:31:53.681+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T12:46:58.479+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T13:02:03.907+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T13:17:08.666+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T13:32:13.980+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T13:47:18.562+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T14:02:23.921+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T14:17:28.637+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T14:32:33.854+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T14:47:38.375+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T15:02:44.219+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T15:17:48.970+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T15:32:54.208+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T15:47:58.955+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T16:01:04.149+0100 I NETWORK  [conn12] end connection 127.0.0.1:53632 (16 connections now open)
+2016-05-03T16:01:04.149+0100 I NETWORK  [conn15] end connection 127.0.0.1:53642 (15 connections now open)
+2016-05-03T16:01:04.149+0100 I NETWORK  [conn16] end connection 127.0.0.1:53649 (15 connections now open)
+2016-05-03T16:01:04.149+0100 I NETWORK  [conn17] end connection 127.0.0.1:53653 (15 connections now open)
+2016-05-03T16:01:04.150+0100 I NETWORK  [conn14] end connection 127.0.0.1:53638 (15 connections now open)
+2016-05-03T16:01:04.150+0100 I NETWORK  [conn18] end connection 127.0.0.1:53661 (15 connections now open)
+2016-05-03T16:01:04.150+0100 I NETWORK  [conn20] end connection 127.0.0.1:53754 (15 connections now open)
+2016-05-03T16:01:04.150+0100 I NETWORK  [conn13] end connection 127.0.0.1:53635 (15 connections now open)
+2016-05-03T16:01:04.957+0100 I COMMAND  [conn2] command admin.$cmd command: getLastError { getlasterror: 1, fsync: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:109 locks:{} protocol:op_command 167ms
+2016-05-03T16:01:14.631+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:61413 #21 (10 connections now open)
+2016-05-03T16:01:14.669+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:61418 #22 (11 connections now open)
+2016-05-03T16:01:14.711+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:61423 #23 (12 connections now open)
+2016-05-03T16:01:14.744+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:61428 #24 (13 connections now open)
+2016-05-03T16:01:30.560+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:61494 #25 (14 connections now open)
+2016-05-03T16:04:47.008+0100 I NETWORK  [conn24] end connection 127.0.0.1:61428 (13 connections now open)
+2016-05-03T16:04:47.009+0100 I NETWORK  [conn23] end connection 127.0.0.1:61423 (12 connections now open)
+2016-05-03T16:04:47.010+0100 I NETWORK  [conn21] end connection 127.0.0.1:61413 (11 connections now open)
+2016-05-03T16:04:48.351+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:61592 #26 (12 connections now open)
+2016-05-03T16:04:48.359+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:61597 #27 (13 connections now open)
+2016-05-03T16:07:59.007+0100 I NETWORK  [conn26] end connection 127.0.0.1:61592 (12 connections now open)
+2016-05-03T16:07:59.012+0100 I NETWORK  [conn22] end connection 127.0.0.1:61418 (11 connections now open)
+2016-05-03T16:07:59.012+0100 I NETWORK  [conn27] end connection 127.0.0.1:61597 (10 connections now open)
+2016-05-03T16:19:23.164+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T16:34:28.827+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T16:49:33.468+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T17:04:39.208+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T17:19:43.941+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T17:34:49.566+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T17:49:54.345+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T18:04:59.713+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T18:37:23.186+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T18:52:28.293+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T19:07:33.020+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T19:22:38.073+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T19:37:43.107+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T20:21:10.770+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T20:36:15.337+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T20:51:20.419+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T21:06:25.488+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T21:21:30.255+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T21:34:47.009+0100 I NETWORK  [conn25] end connection 127.0.0.1:61494 (9 connections now open)
+2016-05-03T21:35:15.549+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:50501 #28 (10 connections now open)
+2016-05-03T21:42:33.357+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T21:57:38.744+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T22:12:43.667+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T22:27:49.122+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T22:42:53.987+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T22:57:59.395+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T23:13:04.073+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T23:28:09.779+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T23:43:14.394+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T23:58:19.606+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T00:13:24.398+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T00:28:29.644+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T02:33:25.009+0100 I NETWORK  [conn28] end connection 127.0.0.1:50501 (9 connections now open)
+2016-05-04T02:33:53.024+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54211 #29 (10 connections now open)
+2016-05-04T03:00:44.412+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain address information for hostname Sulianas-MacBook-Pro.local: nodename nor servname provided, or not known
+2016-05-04T03:58:25.450+0100 I NETWORK  [conn29] end connection 127.0.0.1:54211 (9 connections now open)
+2016-05-04T03:58:25.780+0100 I WRITE    [conn2] update config.lockpings query: { _id: "Sulianas-MacBook-Pro.local:27017:1462267894:16807" } update: { $set: { ping: new Date(1462330705241) } } keysExamined:1 docsExamined:1 nMatched:1 nModified:1 keyUpdates:1 writeConflicts:0 numYields:1 locks:{ Global: { acquireCount: { r: 3, w: 3 }, acquireWaitCount: { w: 1 }, timeAcquiringMicros: { w: 15483 } }, Database: { acquireCount: { w: 3 } }, Collection: { acquireCount: { w: 3 } }, Metadata: { acquireCount: { w: 1 } } } 134ms
+2016-05-04T03:58:26.002+0100 I WRITE    [conn7] update config.mongos query: { _id: "Sulianas-MacBook-Pro.local:27017" } update: { $set: { _id: "Sulianas-MacBook-Pro.local:27017", ping: new Date(1462330705264), up: 62809, waiting: false, mongoVersion: "3.2.1" } } keysExamined:1 docsExamined:1 nMatched:1 nModified:1 keyUpdates:0 writeConflicts:0 numYields:1 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 3 } }, Collection: { acquireCount: { w: 3 } }, Metadata: { acquireCount: { w: 1 } } } 157ms
+2016-05-04T03:58:26.004+0100 I COMMAND  [conn7] command config.$cmd command: update { update: "mongos", updates: [ { q: { _id: "Sulianas-MacBook-Pro.local:27017" }, u: { $set: { _id: "Sulianas-MacBook-Pro.local:27017", ping: new Date(1462330705264), up: 62809, waiting: false, mongoVersion: "3.2.1" } }, multi: false, upsert: true } ] } keyUpdates:0 writeConflicts:0 numYields:0 reslen:56 locks:{ Global: { acquireCount: { r: 3, w: 3 } }, Database: { acquireCount: { w: 3 } }, Collection: { acquireCount: { w: 3 } }, Metadata: { acquireCount: { w: 1 } } } protocol:op_command 172ms
+2016-05-04T03:58:55.900+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54602 #30 (10 connections now open)
+2016-05-04T04:29:36.331+0100 I NETWORK  [conn30] end connection 127.0.0.1:54602 (9 connections now open)
+2016-05-04T04:29:36.642+0100 I COMMAND  [conn4] command admin.$cmd command: getLastError { getlasterror: 1, fsync: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:109 locks:{} protocol:op_command 139ms
+2016-05-04T04:30:06.474+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54848 #31 (10 connections now open)
+2016-05-04T06:24:38.011+0100 I NETWORK  [conn31] end connection 127.0.0.1:54848 (9 connections now open)
+2016-05-04T07:52:31.189+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55312 #32 (10 connections now open)
+2016-05-04T08:00:35.528+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T08:15:40.093+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T08:30:45.226+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T08:45:50.160+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T09:00:55.259+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T09:16:00.051+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T09:31:05.207+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T09:46:09.904+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T10:01:15.192+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T10:16:20.092+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T10:31:25.712+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T10:46:30.381+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T11:01:35.537+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T11:16:40.183+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T11:31:45.331+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T11:46:49.860+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T12:01:55.351+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T12:17:00.891+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T12:32:06.119+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T12:47:11.015+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T13:02:16.375+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T13:17:21.012+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T13:32:26.334+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T13:47:30.854+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T14:02:36.482+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T14:17:41.050+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T14:32:46.230+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T15:12:38.040+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T15:27:43.502+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T15:42:47.996+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T15:57:53.418+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T16:12:58.104+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T16:28:03.459+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T16:43:08.437+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T16:58:13.900+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T17:13:18.595+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T17:25:33.010+0100 I NETWORK  [conn32] end connection 127.0.0.1:55312 (9 connections now open)
+2016-05-04T17:25:40.435+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:64179 #33 (10 connections now open)
+2016-05-04T20:17:31.009+0100 I NETWORK  [conn33] end connection 127.0.0.1:64179 (9 connections now open)
+2016-05-04T20:18:16.574+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:64424 #34 (10 connections now open)
+2016-05-04T20:27:40.814+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T20:42:46.010+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T20:57:50.791+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T21:12:56.205+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T21:28:00.719+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T21:43:06.090+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T21:54:29.008+0100 I NETWORK  [conn34] end connection 127.0.0.1:64424 (9 connections now open)
+2016-05-04T21:54:50.275+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:49637 #35 (10 connections now open)
+2016-05-04T22:01:34.896+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T22:16:39.867+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T22:31:44.940+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T22:46:49.976+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T23:01:55.047+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T23:17:00.052+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-04T23:32:05.190+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-05T00:47:03.468+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-05T01:49:50.964+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-05T02:04:55.399+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-05T02:20:00.642+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-05T02:35:05.441+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-05T03:56:54.148+0100 I NETWORK  [conn35] end connection 127.0.0.1:49637 (9 connections now open)
+2016-05-05T03:57:05.963+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:52872 #36 (10 connections now open)
+2016-05-05T05:41:25.210+0100 I COMMAND  [conn7] command admin.$cmd command: getLastError { getLastError: true, fsync: true } keyUpdates:0 writeConflicts:0 numYields:0 reslen:109 locks:{} protocol:op_command 1201ms
+2016-05-05T07:14:33.530+0100 I COMMAND  [PeriodicTaskRunner] task: UnusedLockCleaner took: 289ms
+2016-05-05T07:21:38.910+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-05T07:36:43.781+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-05T07:51:48.883+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-05T08:06:53.911+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-05T08:21:58.699+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-05T08:37:03.721+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-05T08:52:08.452+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-05T09:07:13.404+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-05T09:22:18.447+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-05T10:26:47.014+0100 I NETWORK  [conn36] end connection 127.0.0.1:52872 (9 connections now open)
+2016-05-05T10:27:10.780+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55601 #37 (10 connections now open)
+2016-05-05T12:55:09.008+0100 I NETWORK  [conn37] end connection 127.0.0.1:55601 (9 connections now open)
+2016-05-05T12:55:13.742+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56016 #38 (10 connections now open)
+2016-05-05T13:03:21.524+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-05T13:18:26.316+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-05T13:33:31.712+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-05T14:37:21.011+0100 I NETWORK  [conn38] end connection 127.0.0.1:56016 (9 connections now open)
+2016-05-05T14:37:24.488+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57419 #39 (10 connections now open)
+2016-05-05T14:45:31.008+0100 I NETWORK  [conn39] end connection 127.0.0.1:57419 (9 connections now open)
+2016-05-05T14:45:57.564+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57747 #40 (10 connections now open)
+2016-05-05T14:48:47.013+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (10.82.78.228, "nodename nor servname provided, or not known"), (10.82.78.228, "nodename nor servname provided, or not known") ]
+2016-05-05T18:49:57.464+0100 I NETWORK  [conn40] end connection 127.0.0.1:57747 (9 connections now open)
+2016-05-05T17:50:27.481+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:61013 #41 (10 connections now open)
+2016-05-05T18:11:00.248+0000 I NETWORK  [conn41] end connection 127.0.0.1:61013 (9 connections now open)
+2016-05-05T18:11:24.612+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:61295 #42 (10 connections now open)
+2016-05-05T19:21:45.014+0000 I NETWORK  [conn42] end connection 127.0.0.1:61295 (9 connections now open)
+2016-05-05T19:22:04.501+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:61575 #43 (10 connections now open)
+2016-05-05T19:25:54.012+0000 I NETWORK  [conn43] end connection 127.0.0.1:61575 (9 connections now open)
+2016-05-05T19:26:05.445+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:61864 #44 (10 connections now open)
+2016-05-05T19:48:57.013+0000 I NETWORK  [conn44] end connection 127.0.0.1:61864 (9 connections now open)
+2016-05-05T19:48:58.915+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:62057 #45 (10 connections now open)
+2016-05-05T21:10:38.010+0100 I NETWORK  [conn45] end connection 127.0.0.1:62057 (9 connections now open)
+2016-05-05T21:10:59.360+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:62530 #46 (10 connections now open)
+2016-05-05T21:12:44.015+0100 I NETWORK  [conn46] end connection 127.0.0.1:62530 (9 connections now open)
+2016-05-05T21:12:59.597+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:62802 #47 (10 connections now open)
+2016-05-05T22:07:02.012+0100 I NETWORK  [conn47] end connection 127.0.0.1:62802 (9 connections now open)
+2016-05-05T22:07:12.446+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63075 #48 (10 connections now open)
+2016-05-05T22:22:19.328+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-05T22:37:24.777+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-05T22:52:30.800+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-05T23:07:38.323+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-05T23:22:45.438+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-05T23:37:53.261+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-05T23:53:00.065+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T00:08:08.030+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T00:23:14.891+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T00:38:22.822+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T00:53:29.901+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T01:08:37.660+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T01:23:44.331+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T01:38:49.897+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T01:53:57.337+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T02:09:02.652+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T02:24:07.473+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T02:39:12.599+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T02:54:17.304+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T03:09:22.850+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T03:24:27.506+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T03:39:32.809+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T03:54:37.572+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T04:09:42.773+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T04:13:01.010+0100 I NETWORK  [conn48] end connection 127.0.0.1:63075 (9 connections now open)
+2016-05-06T04:13:15.277+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57375 #49 (10 connections now open)
+2016-05-06T04:25:48.352+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T04:40:55.549+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T04:56:03.599+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T06:33:12.021+0100 I NETWORK  [conn49] end connection 127.0.0.1:57375 (9 connections now open)
+2016-05-06T06:33:26.473+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58823 #50 (10 connections now open)
+2016-05-06T08:38:42.340+0100 I NETWORK  [conn50] end connection 127.0.0.1:58823 (9 connections now open)
+2016-05-06T08:38:42.471+0100 I COMMAND  [conn7] command admin.$cmd command: getLastError { getLastError: true, fsync: true } keyUpdates:0 writeConflicts:0 numYields:0 reslen:109 locks:{} protocol:op_command 141ms
+2016-05-06T08:38:42.471+0100 I COMMAND  [conn2] command admin.$cmd command: getLastError { getlasterror: 1, fsync: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:91 locks:{} protocol:op_command 129ms
+2016-05-06T08:39:12.467+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59187 #51 (10 connections now open)
+2016-05-06T08:56:07.295+0100 I COMMAND  [PeriodicTaskRunner] task: UnusedLockCleaner took: 122ms
+2016-05-06T08:56:07.551+0100 I COMMAND  [conn51] command admin.$cmd command: getLastError { getlasterror: 1, fsync: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:91 locks:{} protocol:op_command 110ms
+2016-05-06T11:31:32.009+0100 I NETWORK  [conn51] end connection 127.0.0.1:59187 (9 connections now open)
+2016-05-06T11:31:51.187+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:60851 #52 (10 connections now open)
+2016-05-06T13:22:33.009+0100 I NETWORK  [conn52] end connection 127.0.0.1:60851 (9 connections now open)
+2016-05-06T13:22:49.255+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:61116 #53 (10 connections now open)
+2016-05-06T13:33:05.008+0100 I NETWORK  [conn53] end connection 127.0.0.1:61116 (9 connections now open)
+2016-05-06T13:33:12.657+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:61374 #54 (10 connections now open)
+2016-05-06T14:41:26.390+0100 I NETWORK  [conn54] end connection 127.0.0.1:61374 (9 connections now open)
+2016-05-06T14:41:56.501+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:61591 #55 (10 connections now open)
+2016-05-06T14:42:43.289+0100 I NETWORK  [conn55] end connection 127.0.0.1:61591 (9 connections now open)
+2016-05-06T14:42:43.307+0100 I COMMAND  [PeriodicTaskRunner] task: UnusedLockCleaner took: 125ms
+2016-05-06T14:43:00.302+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:61694 #56 (10 connections now open)
+2016-05-06T15:09:38.274+0100 I COMMAND  [conn6] command admin.$cmd command: getLastError { getlasterror: 1, fsync: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:109 locks:{} protocol:op_command 651659ms
+2016-05-06T15:21:14.268+0100 I NETWORK  [conn56] end connection 127.0.0.1:61694 (9 connections now open)
+2016-05-06T15:21:44.293+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:62046 #57 (10 connections now open)
+2016-05-06T15:55:45.302+0100 I NETWORK  [conn57] end connection 127.0.0.1:62046 (9 connections now open)
+2016-05-06T15:56:15.369+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:62423 #58 (10 connections now open)
+2016-05-06T16:00:50.806+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T16:15:55.897+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T16:31:01.089+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T16:46:06.005+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T17:01:11.213+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T17:16:16.138+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T17:31:21.105+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T17:46:26.260+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T18:01:31.182+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T18:16:36.243+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T18:35:08.777+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-06T21:47:13.699+0100 I COMMAND  [conn4] command admin.$cmd command: getLastError { getlasterror: 1, fsync: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:91 locks:{} protocol:op_command 151ms
+2016-05-06T22:02:53.006+0100 I NETWORK  [conn58] end connection 127.0.0.1:62423 (9 connections now open)
+2016-05-06T22:18:24.045+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:51705 #59 (10 connections now open)
+2016-05-06T23:34:40.008+0100 I NETWORK  [conn59] end connection 127.0.0.1:51705 (9 connections now open)
+2016-05-07T06:32:13.439+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:52127 #60 (10 connections now open)
+2016-05-07T08:40:49.377+0100 I NETWORK  [conn60] end connection 127.0.0.1:52127 (9 connections now open)
+2016-05-07T08:40:58.684+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:52335 #61 (10 connections now open)
+2016-05-07T08:50:54.348+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T09:05:54.442+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T09:20:54.538+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T09:35:54.623+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T09:50:54.733+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T10:06:13.173+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T10:21:17.277+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T10:36:22.266+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T10:51:27.317+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T11:06:32.250+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T11:21:36.878+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T11:36:41.803+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T11:51:46.622+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T12:06:51.440+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T12:21:56.363+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T12:37:01.297+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T12:52:06.193+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T13:07:11.009+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T13:22:15.467+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T13:37:20.468+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T13:52:25.208+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T14:07:29.933+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T14:22:34.957+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T14:37:40.200+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T14:52:45.121+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T15:07:50.042+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T15:22:54.763+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T15:37:59.689+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T15:53:04.589+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T16:08:09.544+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T16:23:14.555+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-07T18:36:24.220+0100 I COMMAND  [conn7] command admin.$cmd command: getLastError { getLastError: true, fsync: true } keyUpdates:0 writeConflicts:0 numYields:0 reslen:109 locks:{} protocol:op_command 163ms
+2016-05-07T18:50:10.881+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (172.20.10.3, "nodename nor servname provided, or not known"), (172.20.10.3, "nodename nor servname provided, or not known") ]
+2016-05-07T19:05:15.740+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (172.20.10.3, "nodename nor servname provided, or not known"), (172.20.10.3, "nodename nor servname provided, or not known") ]
+2016-05-07T19:20:20.623+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (172.20.10.3, "nodename nor servname provided, or not known"), (172.20.10.3, "nodename nor servname provided, or not known") ]
+2016-05-07T19:35:25.652+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (172.20.10.3, "nodename nor servname provided, or not known"), (172.20.10.3, "nodename nor servname provided, or not known") ]
+2016-05-07T19:50:29.673+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (172.20.10.3, "nodename nor servname provided, or not known"), (172.20.10.3, "nodename nor servname provided, or not known") ]
+2016-05-07T19:51:42.008+0100 I NETWORK  [conn61] end connection 127.0.0.1:52335 (9 connections now open)
+2016-05-07T19:52:06.492+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:50292 #62 (10 connections now open)
+2016-05-07T22:03:27.009+0100 I NETWORK  [conn62] end connection 127.0.0.1:50292 (9 connections now open)
+2016-05-07T22:03:41.673+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:50548 #63 (10 connections now open)
+2016-05-07T22:51:28.011+0100 I NETWORK  [conn63] end connection 127.0.0.1:50548 (9 connections now open)
+2016-05-07T23:52:06.585+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:50769 #64 (10 connections now open)
+2016-05-07T23:52:06.621+0100 I COMMAND  [PeriodicTaskRunner] task: UnusedLockCleaner took: 343ms
+2016-05-08T00:07:45.011+0100 I NETWORK  [conn64] end connection 127.0.0.1:50769 (9 connections now open)
+2016-05-08T00:38:10.382+0100 I COMMAND  [PeriodicTaskRunner] task: UnusedLockCleaner took: 195ms
+2016-05-08T00:38:10.457+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:51019 #65 (10 connections now open)
+2016-05-08T00:38:11.695+0100 I COMMAND  [conn4] command admin.$cmd command: getLastError { getlasterror: 1, fsync: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:91 locks:{} protocol:op_command 159ms
+2016-05-08T00:58:10.563+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T01:16:41.237+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T01:31:46.315+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T01:46:51.279+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T02:01:55.936+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T02:17:00.819+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T02:18:15.009+0100 I NETWORK  [conn65] end connection 127.0.0.1:51019 (9 connections now open)
+2016-05-08T02:18:32.220+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:52999 #66 (10 connections now open)
+2016-05-08T03:49:52.008+0100 I NETWORK  [conn66] end connection 127.0.0.1:52999 (9 connections now open)
+2016-05-08T03:49:59.487+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53239 #67 (10 connections now open)
+2016-05-08T04:39:51.149+0100 I COMMAND  [conn6] command admin.$cmd command: getLastError { getlasterror: 1, fsync: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:91 locks:{} protocol:op_command 2156025ms
+2016-05-08T04:52:18.608+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T05:07:23.684+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T05:22:28.756+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T05:37:33.527+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T05:52:39.129+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T06:07:43.448+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T06:22:48.827+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T06:37:53.477+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T06:52:58.746+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T07:08:03.455+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T07:23:08.830+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T07:38:13.747+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T07:53:19.298+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T08:08:24.226+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T08:23:29.665+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T09:57:18.011+0100 I NETWORK  [conn67] end connection 127.0.0.1:53239 (9 connections now open)
+2016-05-08T09:57:43.476+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58066 #68 (10 connections now open)
+2016-05-08T10:48:55.006+0100 I NETWORK  [conn68] end connection 127.0.0.1:58066 (9 connections now open)
+2016-05-08T10:49:11.866+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58337 #69 (10 connections now open)
+2016-05-08T11:29:09.013+0100 I NETWORK  [conn69] end connection 127.0.0.1:58337 (9 connections now open)
+2016-05-08T11:38:37.545+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58562 #70 (10 connections now open)
+2016-05-08T11:38:37.556+0100 I COMMAND  [PeriodicTaskRunner] task: UnusedLockCleaner took: 304ms
+2016-05-08T13:59:08.709+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T14:14:13.625+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T14:29:18.779+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T14:44:23.666+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T15:29:30.012+0100 I NETWORK  [conn70] end connection 127.0.0.1:58562 (9 connections now open)
+2016-05-08T15:29:50.617+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:60063 #71 (10 connections now open)
+2016-05-08T15:47:00.496+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T16:02:05.182+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T16:17:10.625+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T16:32:15.364+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T16:47:20.704+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T17:02:25.134+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T17:17:30.012+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T17:32:34.536+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T17:47:39.482+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T18:02:44.125+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T18:17:49.376+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T18:32:53.928+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T18:47:59.436+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T19:03:04.316+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-08T19:08:34.010+0100 I NETWORK  [conn71] end connection 127.0.0.1:60063 (9 connections now open)
+2016-05-08T19:08:43.282+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:64511 #72 (10 connections now open)
+2016-05-08T19:37:09.009+0100 I NETWORK  [conn72] end connection 127.0.0.1:64511 (9 connections now open)
+2016-05-08T19:37:27.061+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:64771 #73 (10 connections now open)
+2016-05-08T19:40:44.013+0100 I NETWORK  [conn73] end connection 127.0.0.1:64771 (9 connections now open)
+2016-05-08T19:40:50.050+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:65020 #74 (10 connections now open)
+2016-05-08T19:57:56.011+0100 I NETWORK  [conn74] end connection 127.0.0.1:65020 (9 connections now open)
+2016-05-08T19:58:22.993+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:65280 #75 (10 connections now open)
+2016-05-08T20:17:32.014+0100 I NETWORK  [conn75] end connection 127.0.0.1:65280 (9 connections now open)
+2016-05-08T20:17:44.143+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:65508 #76 (10 connections now open)
+2016-05-08T21:20:29.013+0100 I NETWORK  [conn76] end connection 127.0.0.1:65508 (9 connections now open)
+2016-05-08T21:21:00.252+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:49374 #77 (10 connections now open)
+2016-05-08T21:58:09.012+0100 I NETWORK  [conn77] end connection 127.0.0.1:49374 (9 connections now open)
+2016-05-08T21:58:31.959+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:49635 #78 (10 connections now open)
+2016-05-08T22:08:21.227+0100 I COMMAND  [conn7] command admin.$cmd command: getLastError { getLastError: true, fsync: true } keyUpdates:0 writeConflicts:0 numYields:0 reslen:109 locks:{} protocol:op_command 852ms
+2016-05-08T23:38:51.473+0100 I NETWORK  [conn78] end connection 127.0.0.1:49635 (9 connections now open)
+2016-05-08T23:38:51.545+0100 I COMMAND  [PeriodicTaskRunner] task: UnusedLockCleaner took: 303ms
+2016-05-08T23:39:21.499+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:49869 #79 (10 connections now open)
+2016-05-08T23:54:30.004+0100 I NETWORK  [conn79] end connection 127.0.0.1:49869 (9 connections now open)
+2016-05-09T00:24:57.407+0100 I COMMAND  [PeriodicTaskRunner] task: UnusedLockCleaner took: 218ms
+2016-05-09T00:24:57.411+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:50004 #80 (10 connections now open)
+2016-05-09T00:27:00.855+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-09T00:44:15.010+0100 I NETWORK  [conn80] end connection 127.0.0.1:50004 (9 connections now open)
+2016-05-09T00:44:35.901+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:50354 #81 (10 connections now open)
+2016-05-09T00:55:12.710+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-09T01:10:17.648+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-09T01:25:22.650+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-09T01:40:27.674+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-09T01:55:32.577+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-09T02:23:06.163+0100 I COMMAND  [conn7] command admin.$cmd command: getLastError { getLastError: true, fsync: true } keyUpdates:0 writeConflicts:0 numYields:0 reslen:109 locks:{} protocol:op_command 1154ms
+2016-05-09T04:54:19.013+0100 I NETWORK  [conn81] end connection 127.0.0.1:50354 (9 connections now open)
+2016-05-09T04:54:24.408+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:52419 #82 (10 connections now open)
+2016-05-09T05:53:27.809+0100 I COMMAND  [conn2] command admin.$cmd command: getLastError { getlasterror: 1, fsync: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:91 locks:{} protocol:op_command 105ms
+2016-05-09T06:09:06.010+0100 I NETWORK  [conn82] end connection 127.0.0.1:52419 (9 connections now open)
+2016-05-09T07:02:35.484+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:52767 #83 (10 connections now open)
+2016-05-09T07:03:39.538+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-09T07:18:44.162+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-09T07:33:49.088+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-09T07:48:54.095+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-09T08:03:59.113+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-09T09:15:54.008+0100 I NETWORK  [conn83] end connection 127.0.0.1:52767 (9 connections now open)
+2016-05-09T09:16:20.603+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54661 #84 (10 connections now open)
+2016-05-09T10:14:03.021+0100 I NETWORK  [conn84] end connection 127.0.0.1:54661 (9 connections now open)
+2016-05-09T10:14:08.160+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54884 #85 (10 connections now open)
+2016-05-09T12:13:16.009+0100 I NETWORK  [conn85] end connection 127.0.0.1:54884 (9 connections now open)
+2016-05-09T12:13:41.320+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55195 #86 (10 connections now open)
+2016-05-09T12:27:50.173+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (172.20.10.3, "nodename nor servname provided, or not known"), (172.20.10.3, "nodename nor servname provided, or not known") ]
+2016-05-09T14:38:50.326+0100 I NETWORK  [conn86] end connection 127.0.0.1:55195 (9 connections now open)
+2016-05-09T14:38:55.897+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56083 #87 (10 connections now open)
+2016-05-09T15:04:32.775+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (172.20.10.3, "nodename nor servname provided, or not known"), (172.20.10.3, "nodename nor servname provided, or not known") ]
+2016-05-09T15:19:37.856+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (172.20.10.3, "nodename nor servname provided, or not known"), (172.20.10.3, "nodename nor servname provided, or not known") ]
+2016-05-09T15:34:42.720+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (172.20.10.3, "nodename nor servname provided, or not known"), (172.20.10.3, "nodename nor servname provided, or not known") ]
+2016-05-09T15:49:50.696+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (172.20.10.3, "nodename nor servname provided, or not known"), (172.20.10.3, "nodename nor servname provided, or not known") ]
+2016-05-09T16:04:55.579+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (172.20.10.3, "nodename nor servname provided, or not known"), (172.20.10.3, "nodename nor servname provided, or not known") ]
+2016-05-09T16:20:00.488+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (172.20.10.3, "nodename nor servname provided, or not known"), (172.20.10.3, "nodename nor servname provided, or not known") ]
+2016-05-09T16:35:05.218+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (172.20.10.3, "nodename nor servname provided, or not known"), (172.20.10.3, "nodename nor servname provided, or not known") ]
+2016-05-09T17:20:19.637+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (10.87.105.11, "nodename nor servname provided, or not known"), (10.87.105.11, "nodename nor servname provided, or not known") ]
+2016-05-09T17:35:24.878+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (10.87.105.11, "nodename nor servname provided, or not known"), (10.87.105.11, "nodename nor servname provided, or not known") ]
+2016-05-09T17:50:29.763+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (10.87.105.11, "nodename nor servname provided, or not known"), (10.87.105.11, "nodename nor servname provided, or not known") ]
+2016-05-09T18:05:36.422+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (10.87.105.11, "nodename nor servname provided, or not known"), (10.87.105.11, "nodename nor servname provided, or not known") ]
+2016-05-09T18:08:45.220+0100 I NETWORK  [conn87] end connection 127.0.0.1:56083 (9 connections now open)
+2016-05-09T18:09:15.253+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:60210 #88 (10 connections now open)
+2016-05-09T18:27:37.061+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (10.87.105.11, "nodename nor servname provided, or not known"), (10.87.105.11, "nodename nor servname provided, or not known") ]
+2016-05-09T18:40:58.182+0100 I NETWORK  [conn88] end connection 127.0.0.1:60210 (9 connections now open)
+2016-05-09T18:40:59.028+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:60728 #89 (10 connections now open)
+2016-05-09T18:46:44.115+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (10.87.105.11, "nodename nor servname provided, or not known"), (10.87.105.11, "nodename nor servname provided, or not known") ]
+2016-05-09T19:06:32.306+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (10.87.105.11, "nodename nor servname provided, or not known"), (10.87.105.11, "nodename nor servname provided, or not known") ]
+2016-05-09T19:21:37.468+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (10.87.105.11, "nodename nor servname provided, or not known"), (10.87.105.11, "nodename nor servname provided, or not known") ]
+2016-05-09T19:36:42.367+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (10.87.105.11, "nodename nor servname provided, or not known"), (10.87.105.11, "nodename nor servname provided, or not known") ]
+2016-05-09T19:57:29.277+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (10.87.105.11, "nodename nor servname provided, or not known"), (10.87.105.11, "nodename nor servname provided, or not known") ]
+2016-05-09T20:11:05.202+0100 I NETWORK  [conn89] end connection 127.0.0.1:60728 (9 connections now open)
+2016-05-09T20:11:27.769+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:62240 #90 (10 connections now open)
+2016-05-09T20:26:41.173+0100 I NETWORK  [conn90] end connection 127.0.0.1:62240 (9 connections now open)
+2016-05-09T20:27:01.581+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:62601 #91 (10 connections now open)
+2016-05-09T22:27:13.151+0100 I COMMAND  [ftdc] serverStatus was very slow: { after basic: 0, after asserts: 0, after connections: 0, after extra_info: 0, after globalLock: 0, after locks: 0, after network: 0, after opcounters: 0, after opcountersRepl: 0, after repl: 0, after storageEngine: 0, after wiredTiger: 0, at end: 1020 }
+2016-05-09T23:11:23.536+0100 I COMMAND  [PeriodicTaskRunner] task: UnusedLockCleaner took: 270ms
+2016-05-09T23:11:23.605+0100 I COMMAND  [conn7] command admin.$cmd command: getLastError { getLastError: true, fsync: true } keyUpdates:0 writeConflicts:0 numYields:0 reslen:109 locks:{} protocol:op_command 209ms
+2016-05-09T23:17:11.331+0100 I COMMAND  [PeriodicTaskRunner] task: UnusedLockCleaner took: 144ms
+2016-05-09T23:17:12.214+0100 I NETWORK  [conn91] end connection 127.0.0.1:62601 (9 connections now open)
+2016-05-09T23:17:41.855+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63609 #92 (10 connections now open)
+2016-05-09T23:18:09.377+0100 I COMMAND  [conn7] command admin.$cmd command: getLastError { getLastError: true, fsync: true } keyUpdates:0 writeConflicts:0 numYields:0 reslen:109 locks:{} protocol:op_command 5014ms
+2016-05-09T22:19:02.165+0000 I NETWORK  [conn92] end connection 127.0.0.1:63609 (9 connections now open)
+2016-05-09T22:19:02.345+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63816 #93 (10 connections now open)
+2016-05-09T22:25:44.153+0000 I NETWORK  [conn93] end connection 127.0.0.1:63816 (9 connections now open)
+2016-05-09T22:26:02.628+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:64251 #94 (10 connections now open)
+2016-05-09T22:38:44.151+0000 I NETWORK  [conn94] end connection 127.0.0.1:64251 (9 connections now open)
+2016-05-09T22:38:52.500+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:64504 #95 (10 connections now open)
+2016-05-09T22:42:25.007+0000 I NETWORK  [conn95] end connection 127.0.0.1:64504 (9 connections now open)
+2016-05-09T22:42:56.177+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:64777 #96 (10 connections now open)
+2016-05-09T23:18:11.010+0000 I NETWORK  [conn96] end connection 127.0.0.1:64777 (9 connections now open)
+2016-05-09T23:45:33.349+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:65128 #97 (10 connections now open)
+2016-05-09T23:45:33.367+0000 I COMMAND  [PeriodicTaskRunner] task: UnusedLockCleaner took: 158ms
+2016-05-09T23:45:33.907+0000 I COMMAND  [conn4] command admin.$cmd command: getLastError { getlasterror: 1, fsync: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:109 locks:{} protocol:op_command 155ms
+2016-05-09T23:45:33.907+0000 I COMMAND  [conn2] command admin.$cmd command: getLastError { getlasterror: 1, fsync: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:91 locks:{} protocol:op_command 104ms
+2016-05-09T23:45:33.907+0000 I COMMAND  [conn97] command admin.$cmd command: getLastError { getlasterror: 1, fsync: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:109 locks:{} protocol:op_command 104ms
+2016-05-09T23:48:30.231+0000 I NETWORK  [conn97] end connection 127.0.0.1:65128 (9 connections now open)
+2016-05-09T23:48:45.734+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:65434 #98 (10 connections now open)
+2016-05-09T23:59:06.208+0000 I NETWORK  [conn98] end connection 127.0.0.1:65434 (9 connections now open)
+2016-05-09T23:59:18.817+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:49407 #99 (10 connections now open)
+2016-05-10T00:00:27.480+0000 I COMMAND  [conn99] command admin.$cmd command: getLastError { getlasterror: 1, fsync: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:91 locks:{} protocol:op_command 239ms
+2016-05-10T00:00:27.552+0000 I COMMAND  [conn2] command admin.$cmd command: getLastError { getlasterror: 1, fsync: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:91 locks:{} protocol:op_command 300ms
+2016-05-10T00:05:38.212+0000 I NETWORK  [conn99] end connection 127.0.0.1:49407 (9 connections now open)
+2016-05-10T00:05:43.642+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:49751 #100 (10 connections now open)
+2016-05-10T01:25:25.008+0100 I NETWORK  [conn100] end connection 127.0.0.1:49751 (9 connections now open)
+2016-05-10T01:25:27.408+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:50350 #101 (10 connections now open)
+2016-05-10T01:33:59.153+0100 I NETWORK  [conn101] end connection 127.0.0.1:50350 (9 connections now open)
+2016-05-10T01:34:06.057+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:50752 #102 (10 connections now open)
+2016-05-10T01:45:49.017+0100 I NETWORK  [conn102] end connection 127.0.0.1:50752 (9 connections now open)
+2016-05-10T01:45:50.260+0100 I COMMAND  [conn7] command admin.$cmd command: getLastError { getLastError: true, fsync: true } keyUpdates:0 writeConflicts:0 numYields:0 reslen:109 locks:{} protocol:op_command 142ms
+2016-05-10T01:46:13.105+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:51036 #103 (10 connections now open)
+2016-05-10T01:47:38.693+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T02:02:43.613+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T02:17:48.533+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T02:32:53.488+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T05:38:26.906+0100 I NETWORK  [conn103] end connection 127.0.0.1:51036 (9 connections now open)
+2016-05-10T06:24:00.537+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53299 #104 (10 connections now open)
+2016-05-10T06:24:00.575+0100 I COMMAND  [PeriodicTaskRunner] task: UnusedLockCleaner took: 187ms
+2016-05-10T06:39:41.011+0100 I NETWORK  [conn104] end connection 127.0.0.1:53299 (9 connections now open)
+2016-05-10T07:20:19.679+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53620 #105 (10 connections now open)
+2016-05-10T07:28:23.414+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T07:43:28.121+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T07:58:32.742+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T08:13:37.445+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T08:28:42.234+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T08:43:47.036+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T08:58:52.006+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T09:13:57.168+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T09:29:02.066+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T09:49:30.168+0100 I NETWORK  [conn105] end connection 127.0.0.1:53620 (9 connections now open)
+2016-05-10T09:50:00.610+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58047 #106 (10 connections now open)
+2016-05-10T10:02:58.154+0100 I NETWORK  [conn106] end connection 127.0.0.1:58047 (9 connections now open)
+2016-05-10T10:03:04.398+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58325 #107 (10 connections now open)
+2016-05-10T10:26:49.003+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T10:46:45.447+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T11:01:50.425+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T11:16:55.201+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T11:32:00.205+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T11:47:05.063+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T12:02:10.147+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T12:17:15.182+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T12:32:19.998+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T12:47:24.063+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T13:02:28.181+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T13:17:32.137+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T13:26:44.203+0100 I NETWORK  [conn107] end connection 127.0.0.1:58325 (9 connections now open)
+2016-05-10T13:27:09.300+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63497 #108 (10 connections now open)
+2016-05-10T13:39:37.119+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T13:54:41.787+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T14:23:30.173+0100 I NETWORK  [conn108] end connection 127.0.0.1:63497 (9 connections now open)
+2016-05-10T14:23:56.329+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:64479 #109 (10 connections now open)
+2016-05-10T14:27:49.663+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T14:42:54.214+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T14:57:59.645+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T15:13:03.860+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T15:28:08.197+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T15:43:12.035+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T15:58:25.913+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T16:13:30.747+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T16:35:39.012+0100 I NETWORK  [conn109] end connection 127.0.0.1:64479 (9 connections now open)
+2016-05-10T16:35:55.102+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:51136 #110 (10 connections now open)
+2016-05-10T16:46:14.738+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T17:13:41.239+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T17:35:58.011+0100 I NETWORK  [conn110] end connection 127.0.0.1:51136 (9 connections now open)
+2016-05-10T17:35:59.155+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:52487 #111 (10 connections now open)
+2016-05-10T18:02:51.210+0100 I COMMAND  [conn7] command admin.$cmd command: getLastError { getLastError: true, fsync: true } keyUpdates:0 writeConflicts:0 numYields:0 reslen:109 locks:{} protocol:op_command 1141ms
+2016-05-10T18:48:41.151+0100 I NETWORK  [conn111] end connection 127.0.0.1:52487 (9 connections now open)
+2016-05-10T18:48:41.202+0100 I COMMAND  [conn7] command admin.$cmd command: getLastError { getLastError: true, fsync: true } keyUpdates:0 writeConflicts:0 numYields:0 reslen:109 locks:{} protocol:op_command 1147ms
+2016-05-10T18:48:49.118+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:52828 #112 (10 connections now open)
+2016-05-10T20:29:34.008+0100 I NETWORK  [conn112] end connection 127.0.0.1:52828 (9 connections now open)
+2016-05-10T20:29:55.849+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53091 #113 (10 connections now open)
+2016-05-10T22:34:23.626+0100 I NETWORK  [conn113] end connection 127.0.0.1:53091 (9 connections now open)
+2016-05-10T22:34:23.715+0100 I COMMAND  [PeriodicTaskRunner] task: UnusedLockCleaner took: 389ms
+2016-05-10T22:34:53.770+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53324 #114 (10 connections now open)
+2016-05-10T23:35:49.357+0100 I COMMAND  [PeriodicTaskRunner] task: UnusedLockCleaner took: 215ms
+2016-05-10T23:40:53.490+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-10T23:55:58.357+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T00:11:03.396+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T00:58:34.009+0100 I NETWORK  [conn114] end connection 127.0.0.1:53324 (9 connections now open)
+2016-05-11T00:58:41.600+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54616 #115 (10 connections now open)
+2016-05-11T02:44:01.009+0100 I NETWORK  [conn115] end connection 127.0.0.1:54616 (9 connections now open)
+2016-05-11T02:44:28.411+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55271 #116 (10 connections now open)
+2016-05-11T04:58:09.011+0100 I NETWORK  [conn116] end connection 127.0.0.1:55271 (9 connections now open)
+2016-05-11T04:58:30.871+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55517 #117 (10 connections now open)
+2016-05-11T06:14:55.008+0100 I NETWORK  [conn117] end connection 127.0.0.1:55517 (9 connections now open)
+2016-05-11T06:15:06.815+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55761 #118 (10 connections now open)
+2016-05-11T07:07:56.752+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T07:22:58.840+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T07:38:01.417+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T07:53:03.703+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T08:08:06.299+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T08:23:08.538+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T08:38:11.111+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T08:53:13.427+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T09:08:16.446+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T09:23:19.061+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T09:38:21.662+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T09:53:24.151+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T10:08:26.942+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T10:20:46.157+0100 I COMMAND  [conn4] command admin.$cmd command: getLastError { getlasterror: 1, fsync: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:91 locks:{} protocol:op_command 1144ms
+2016-05-11T10:25:28.009+0100 I NETWORK  [conn118] end connection 127.0.0.1:55761 (9 connections now open)
+2016-05-11T10:25:54.471+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:60595 #119 (10 connections now open)
+2016-05-11T10:54:11.011+0100 I NETWORK  [conn119] end connection 127.0.0.1:60595 (9 connections now open)
+2016-05-11T10:54:29.424+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:60817 #120 (10 connections now open)
+2016-05-11T11:01:05.959+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T11:16:06.033+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T11:31:07.876+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T11:46:10.491+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T12:01:12.871+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T12:16:15.415+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T12:31:17.735+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T12:46:20.358+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T13:01:22.667+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T13:31:16.086+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T13:46:16.212+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T14:01:18.602+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T14:16:23.470+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T14:31:28.671+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T14:46:33.428+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T15:01:38.721+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T15:16:43.443+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T15:36:27.009+0100 I NETWORK  [conn120] end connection 127.0.0.1:60817 (9 connections now open)
+2016-05-11T15:36:52.995+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:49289 #121 (10 connections now open)
+2016-05-11T17:38:26.010+0100 I NETWORK  [conn121] end connection 127.0.0.1:49289 (9 connections now open)
+2016-05-11T17:38:45.384+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:49537 #122 (10 connections now open)
+2016-05-11T18:39:13.425+0100 I COMMAND  [conn2] command admin.$cmd command: getLastError { getlasterror: 1, fsync: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:109 locks:{} protocol:op_command 3598853ms
+2016-05-11T19:42:06.224+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T19:57:10.579+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T20:12:15.361+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T20:27:20.302+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T20:42:25.275+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T20:57:30.157+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T21:12:34.855+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T21:27:39.742+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T21:42:44.658+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T21:57:49.793+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-11T22:09:41.701+0100 I COMMAND  [conn2] command admin.$cmd command: getLastError { getlasterror: 1, fsync: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:91 locks:{} protocol:op_command 1688ms
+2016-05-12T00:10:28.013+0100 I NETWORK  [conn122] end connection 127.0.0.1:49537 (9 connections now open)
+2016-05-12T00:59:54.906+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:52776 #123 (10 connections now open)
+2016-05-12T02:19:59.570+0100 I COMMAND  [PeriodicTaskRunner] task: UnusedLockCleaner took: 356ms
+2016-05-12T03:10:52.356+0100 I COMMAND  [PeriodicTaskRunner] task: UnusedLockCleaner took: 187ms
+2016-05-12T08:02:37.311+0100 I NETWORK  [conn123] end connection 127.0.0.1:52776 (9 connections now open)
+2016-05-12T08:09:12.216+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54215 #124 (10 connections now open)
+2016-05-12T08:49:02.151+0100 I NETWORK  [conn124] end connection 127.0.0.1:54215 (9 connections now open)
+2016-05-12T08:49:19.050+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54408 #125 (10 connections now open)
+2016-05-12T09:38:59.404+0100 I COMMAND  [PeriodicTaskRunner] task: UnusedLockCleaner took: 264ms
+2016-05-12T10:10:53.011+0100 I NETWORK  [conn125] end connection 127.0.0.1:54408 (9 connections now open)
+2016-05-12T10:11:15.588+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55069 #126 (10 connections now open)
+2016-05-12T11:35:09.013+0100 I NETWORK  [conn126] end connection 127.0.0.1:55069 (9 connections now open)
+2016-05-12T11:35:35.052+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55453 #127 (10 connections now open)
+2016-05-12T11:59:42.010+0100 I NETWORK  [conn127] end connection 127.0.0.1:55453 (9 connections now open)
+2016-05-12T11:59:58.818+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55678 #128 (10 connections now open)
+2016-05-12T12:49:38.012+0100 I NETWORK  [conn128] end connection 127.0.0.1:55678 (9 connections now open)
+2016-05-12T15:06:45.357+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55889 #129 (10 connections now open)
+2016-05-12T15:06:45.580+0100 I COMMAND  [conn4] command admin.$cmd command: getLastError { getlasterror: 1, fsync: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:91 locks:{} protocol:op_command 134ms
+2016-05-12T15:06:46.281+0100 I NETWORK  [conn129] end connection 127.0.0.1:55889 (9 connections now open)
+2016-05-12T15:07:15.701+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56053 #130 (10 connections now open)
+2016-05-12T15:45:25.201+0100 I NETWORK  [conn130] end connection 127.0.0.1:56053 (9 connections now open)
+2016-05-12T15:45:31.442+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56268 #131 (10 connections now open)
+2016-05-12T16:54:16.358+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-12T17:21:13.012+0100 I NETWORK  [conn131] end connection 127.0.0.1:56268 (9 connections now open)
+2016-05-12T17:21:22.004+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57035 #132 (10 connections now open)
+2016-05-12T17:21:41.115+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-12T18:31:16.011+0100 I NETWORK  [conn132] end connection 127.0.0.1:57035 (9 connections now open)
+2016-05-12T18:31:35.854+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57444 #133 (10 connections now open)
+2016-05-12T19:56:58.008+0100 I NETWORK  [conn133] end connection 127.0.0.1:57444 (9 connections now open)
+2016-05-12T19:57:09.905+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57690 #134 (10 connections now open)
+2016-05-12T20:09:19.009+0100 I NETWORK  [conn134] end connection 127.0.0.1:57690 (9 connections now open)
+2016-05-12T22:09:23.437+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57918 #135 (10 connections now open)
+2016-05-12T22:09:23.621+0100 I COMMAND  [conn2] command admin.$cmd command: getLastError { getlasterror: 1, fsync: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:91 locks:{} protocol:op_command 204ms
+2016-05-13T00:09:31.534+0100 I COMMAND  [conn7] command admin.$cmd command: getLastError { getLastError: true, fsync: true } keyUpdates:0 writeConflicts:0 numYields:0 reslen:109 locks:{} protocol:op_command 182ms
+2016-05-13T00:09:36.784+0100 I NETWORK  [conn135] end connection 127.0.0.1:57918 (9 connections now open)
+2016-05-13T00:09:39.178+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58165 #136 (10 connections now open)
+2016-05-13T01:14:01.151+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-13T01:29:06.009+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-13T02:11:42.012+0100 I NETWORK  [conn136] end connection 127.0.0.1:58165 (9 connections now open)
+2016-05-13T02:11:50.671+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59334 #137 (10 connections now open)
+2016-05-13T03:57:10.159+0100 I COMMAND  [conn7] command admin.$cmd command: getLastError { getLastError: true, fsync: true } keyUpdates:0 writeConflicts:0 numYields:0 reslen:109 locks:{} protocol:op_command 433ms
+2016-05-13T04:19:41.615+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-13T04:34:47.010+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-13T04:49:51.481+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-13T05:04:56.797+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-13T05:20:01.505+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-13T05:35:06.860+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-13T05:50:12.636+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-13T07:59:21.198+0100 I COMMAND  [conn7] command admin.$cmd command: getLastError { getLastError: true, fsync: true } keyUpdates:0 writeConflicts:0 numYields:0 reslen:109 locks:{} protocol:op_command 651ms
+2016-05-13T08:19:20.183+0100 I NETWORK  [conn137] end connection 127.0.0.1:59334 (9 connections now open)
+2016-05-13T08:19:23.705+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:62346 #138 (10 connections now open)
+2016-05-13T10:59:29.483+0100 I COMMAND  [PeriodicTaskRunner] task: UnusedLockCleaner took: 251ms
+2016-05-13T12:59:38.293+0100 I NETWORK  [conn138] end connection 127.0.0.1:62346 (9 connections now open)
+2016-05-13T12:59:38.488+0100 I COMMAND  [conn7] command admin.$cmd command: getLastError { getLastError: true, fsync: true } keyUpdates:0 writeConflicts:0 numYields:0 reslen:109 locks:{} protocol:op_command 202ms
+2016-05-13T12:59:44.176+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:62740 #139 (10 connections now open)
+2016-05-13T15:35:08.271+0100 I NETWORK  [conn139] end connection 127.0.0.1:62740 (9 connections now open)
+2016-05-13T15:35:08.292+0100 I COMMAND  [PeriodicTaskRunner] task: UnusedLockCleaner took: 144ms
+2016-05-13T15:35:08.455+0100 I COMMAND  [conn4] command admin.$cmd command: getLastError { getlasterror: 1, fsync: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:91 locks:{} protocol:op_command 156ms
+2016-05-13T15:35:08.991+0100 I COMMAND  [conn4] command admin.$cmd command: getLastError { getlasterror: 1, fsync: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:91 locks:{} protocol:op_command 122ms
+2016-05-13T15:35:38.348+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63023 #140 (10 connections now open)
+2016-05-13T15:52:08.905+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-13T16:07:13.335+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-13T16:22:17.083+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-13T16:37:21.377+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-13T18:10:20.023+0100 I NETWORK  [conn140] end connection 127.0.0.1:63023 (9 connections now open)
+2016-05-13T18:10:25.135+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:65246 #141 (10 connections now open)
+2016-05-13T19:11:22.904+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-13T19:26:27.603+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-13T19:41:32.424+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-13T20:39:40.012+0100 I NETWORK  [conn141] end connection 127.0.0.1:65246 (9 connections now open)
+2016-05-13T20:39:51.252+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:49856 #142 (10 connections now open)
+2016-05-13T22:16:08.009+0100 I NETWORK  [conn142] end connection 127.0.0.1:49856 (9 connections now open)
+2016-05-13T22:16:38.021+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:50154 #143 (10 connections now open)
+2016-05-14T00:18:08.013+0100 I NETWORK  [conn143] end connection 127.0.0.1:50154 (9 connections now open)
+2016-05-14T00:18:31.982+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:50434 #144 (10 connections now open)
+2016-05-14T03:20:27.005+0100 I NETWORK  [conn144] end connection 127.0.0.1:50434 (9 connections now open)
+2016-05-14T03:20:49.296+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T03:20:51.606+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:50835 #145 (10 connections now open)
+2016-05-14T06:22:45.009+0100 I NETWORK  [conn145] end connection 127.0.0.1:50835 (9 connections now open)
+2016-05-14T06:23:10.925+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:51260 #146 (10 connections now open)
+2016-05-14T08:24:16.012+0100 I NETWORK  [conn146] end connection 127.0.0.1:51260 (9 connections now open)
+2016-05-14T08:24:17.487+0100 I COMMAND  [conn4] command admin.$cmd command: getLastError { getlasterror: 1, fsync: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:91 locks:{} protocol:op_command 3599365ms
+2016-05-14T08:24:33.871+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:51545 #147 (10 connections now open)
+2016-05-14T08:36:12.691+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T08:51:17.415+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T09:06:22.211+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T09:21:27.545+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T09:36:32.131+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T09:51:37.357+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T10:06:41.912+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T10:21:47.262+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T10:36:51.990+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T10:51:57.098+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T14:24:34.693+0100 I COMMAND  [conn4] command admin.$cmd command: getLastError { getlasterror: 1, fsync: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:91 locks:{} protocol:op_command 240ms
+2016-05-14T14:24:34.824+0100 I COMMAND  [conn147] command admin.$cmd command: getLastError { getlasterror: 1, fsync: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:91 locks:{} protocol:op_command 339ms
+2016-05-14T14:24:35.542+0100 I COMMAND  [conn2] command admin.$cmd command: getLastError { getlasterror: 1, fsync: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:109 locks:{} protocol:op_command 157ms
+2016-05-14T14:40:14.009+0100 I NETWORK  [conn147] end connection 127.0.0.1:51545 (9 connections now open)
+2016-05-14T14:50:16.348+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55705 #148 (10 connections now open)
+2016-05-14T14:51:21.038+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T15:06:25.758+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T15:21:30.583+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T15:36:35.604+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T15:51:40.622+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T16:06:45.584+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T16:21:50.568+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T16:36:55.695+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T17:59:03.430+0100 I COMMAND  [PeriodicTaskRunner] task: UnusedLockCleaner took: 268ms
+2016-05-14T17:59:03.767+0100 I COMMAND  [conn4] command admin.$cmd command: getLastError { getlasterror: 1, fsync: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:91 locks:{} protocol:op_command 402ms
+2016-05-14T18:11:09.970+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T18:26:15.395+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T18:41:20.134+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T18:56:25.497+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T19:11:29.932+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T19:26:34.936+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T19:54:45.012+0100 I NETWORK  [conn148] end connection 127.0.0.1:55705 (9 connections now open)
+2016-05-14T19:55:01.170+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59535 #149 (10 connections now open)
+2016-05-14T20:04:32.422+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T20:19:37.749+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T20:34:42.271+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T20:49:47.320+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T21:04:52.017+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T21:19:57.402+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T21:35:02.387+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T21:50:07.753+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-14T22:05:12.336+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-15T01:21:50.626+0100 I COMMAND  [PeriodicTaskRunner] task: UnusedLockCleaner took: 411ms
+2016-05-15T01:22:57.745+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-15T01:38:02.378+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-15T01:53:07.213+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-15T02:08:11.936+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-15T03:11:22.175+0100 I COMMAND  [conn149] command admin.$cmd command: getLastError { getlasterror: 1, fsync: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:91 locks:{} protocol:op_command 1164ms
+2016-05-15T03:11:22.261+0100 I NETWORK  [conn149] end connection 127.0.0.1:59535 (9 connections now open)
+2016-05-15T03:11:53.118+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63734 #150 (10 connections now open)
+2016-05-15T05:12:54.012+0100 I NETWORK  [conn150] end connection 127.0.0.1:63734 (9 connections now open)
+2016-05-15T05:13:15.935+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:64025 #151 (10 connections now open)
+2016-05-15T07:09:10.166+0100 I NETWORK  [conn151] end connection 127.0.0.1:64025 (9 connections now open)
+2016-05-15T07:09:16.609+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:64429 #152 (10 connections now open)
+2016-05-15T07:16:42.471+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-15T07:31:48.111+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-15T07:46:52.938+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-15T08:01:58.172+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-15T08:17:03.086+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-15T08:43:15.488+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-15T08:45:04.008+0100 I NETWORK  [conn152] end connection 127.0.0.1:64429 (9 connections now open)
+2016-05-15T08:45:09.282+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:50215 #153 (10 connections now open)
+2016-05-15T08:58:56.982+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-15T09:14:01.958+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-15T09:29:06.866+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]

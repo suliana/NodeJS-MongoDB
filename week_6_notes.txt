@@ -1,0 +1,45 @@
+Hi all,
+
+This are week 6 notes, please fell free to contribute anything that you want so we can all improve them
+
+Aggregation Framework:
+
+The aggregation framework works as an aggregation pipeline, in which each stage gets an input and returns an output
+
+Familiar stage operations:
+
+Match
+Project
+Skip
+sort
+Limit
+The ways to invoke the aggregation framework and build a set of stages pipeline we can do the following:
+
+The .aggregate method receives an array in which each element is a documents that represent the stage. Each stage runs in order so the first will always run before than the second one and passed it’s results to it. It returns a cursos
+db.companies.aggregate([ { $match: { founded_year: 2004} }, { $sort: {name: 1} }, { $skip: 10}, { $limit: 5}, { $project: {name: 1, _id: 0}} ])
+
+Reshaping Documents
+
+Using the project operator we can promote nested fields to the top level, for this we can interpolate strings using the $ syntax
+db.companies.aggregate([ { $match: {"funding_rounds.investments.financial_org.permalink": 'greylock'}}, { $project: { name: 1, _id: 0, ipo: '$ipo.pub_year', valuation: '$ipo.valuation_amount', funders: "$funding_rounds.investments.financial_org.permalink" }} ])
+
+We can also project a constructed document field with nested fields
+db.companies.aggregate([ { $match: {"funding_rounds.investments.financial_org.permalink": 'greylock'}}, { $project: { name: 1, _id: 0, ipo: '$ipo.pub_year', valuation: '$ipo.valuation_amount', founded: { year: '$founded_year', month: '$founded_month', day:"$founded_day" } }} ])
+
+$UNWIND
+
+It lets us take a Array value field and for each element in the array produce a new document. So basically it outputs more documents thant what it receives.
+
+Example:
+
+db.companies.aggregate([ { $match: {"funding_rounds.investments.financial_org.permalink": "greylock" } }, // {$unwind: '$funding_rounds'}, {$skip: 1}, {$limit: 1}, {$unwind: '$funding_rounds’}, // This creates a new document per element inside the funding rounds array {$unwind: '$funding_rounds.investments’}, //This creates an new documents per element inside the investments array inside each funding round {$match: {'funding_rounds.investments.financial_org.permalink': 'greylock'}}, // This old returns documents where greylock was te investor {$project: { name: 1, '_id': 0, // funding_rounds: 1 funder: '$funding_rounds.investments.financial_org.permalink', amount: '$funding_rounds.raised_amount', year: '$funding_rounds.funded_year' }} ]).pretty()
+
+$FILTER ARRAYS FIELDS IN PROJECTIONS
+
+db.companies.aggregate([ { $match: {"funding_rounds.investments.financial_org.permalink": "greylock" } },// Match all companies that where funded by greylock in at leat one round {$project: { name: 1, rounds: { $filter: { // Only included round where: input: '$funding_rounds', // take the funding_rounds array field as: 'round', // Name each element as 'round' cond: {$gte: ['$$round.raised_amount', 100000000]} // Only let pass '$round' where the raised amount is grater or equal to 100 million }} }}, // Create a rounds array field composed of only rounds where the amount raised was greater than 100 million {$unwind: '$rounds'}, // Separeted each element inside the 'rounds' field into it's own document {$match: {"rounds.investments.financial_org.permalink": "greylock" }}, // only match docuemnts where greylock was and investoy {$project: { name: 1, _id: 0, round_details: { raised_amount: '$rounds.raised_amount', investors: '$rounds.investments.financial_org.name', year: '$rounds.funded_year' } }} //create a pretty result ]).pretty()
+
+$ARRAY EXPRESSSION
+
+// Array elementAt
+
+db.companies.aggregate([ {$match: {founded_year: 2010}}, {$project: { name: 1, _id: 0, founded_year: 1, first_round: {$arrayElemAt: ['$funding_rounds', 0]}, // Give me the first round last_round: {$arrayElemAt: ['$funding_rounds', -1]}, // GIve me the last round some_rounds: {$slice: ['$funding_rounds', 1, 3]}, // Give only rounds 1,2,3 total_rounds: {$size: '$funding_rounds'} // Give the size of the funding_rounds array }} ]).pretty()

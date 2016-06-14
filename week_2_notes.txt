@@ -1,0 +1,84 @@
+Week 6 notes0+0
+Week 5 notes0+1
+Access to videos after Course?3+1
+I can't load my Final Project6+1
+Week 4 notes 10+31
+Week 3 Notes 9+22
+Notes for week 2 4+27
+Difference between insert() and insertOne()10+1
+ECONNREFUSED 127.0.0.1:270178+3
+Help understanding Javascript Callbacks11+2
+Failed to load c++ bson extension...13+5
+Welcome!132+28
+Lab 6:1+0
+Related to Project Work1+0
+lab2A: Query regarding Pagination statement 1+0
+Final 1 question: How do I know if A, B, C are correct?2+0
+PyMongo?2+1
+Final 1A - All4+0
+W7: Intro to sharding0+0
+Final Exam Submissions1+2
+Load more
++ 27
+Notes for week 2
+juan267
+about a month ago
+
+Hi,
+
+I made some notes about weeek 2 material and I wanted to shared them maybe they are useful for someone.
+
+CRUD Operations:
+
+Inserting:
+
+insertOne(): It inserts one document and creates a collection if it doesn’t exist
+insertMany([{},{}]): You pass it an array of objects, and it creates all of them as documents in the collection, it returns an insertedIds array containing all insert _ids. You can pass it as a second argument the ordered: false parameter that says the if there are error don’t stop just keep going.
+You can pass “_id” to set an specific id of the document.
+Reading:
+
+find(): returns all documents if you don’t pass it a query selector
+find({rating: “pg-13”}): returns all documents that have a rating of “pg-13"
+find({“tomato.meter”: 100}): returns all documents that have 100 in the value meter of the object nested tomato
+You can use . notation to access documents inside documents always inside “"
+Equality matches on arrays:
+On the entire array: find({"actors”: [“juan”, “carolina"]}) , putting [] makes the jury try to find and exact match of the array.
+Based on any element: find({“actors”: “juan”}), this will find all documents where “juan” is an element inside the “actors” array.
+Based on an specific element: find({“actors.0”: “juan"}), this will find all documents where the first element of the “actors” arrays is “juan”
+Projections:
+They are the second arguments in the find() method, they specified which fields to return in the documents
+find({“actors”: “juan”}, {title: 1, _id: 0}): this will return only the title field and will exclude the _id field
+find({“actors”: “juan”, {tittle: 0, age: 0}}: this will return all fields except title and age
+Cursors:
+All find queries return a cursor, a cursor is limited by a batch size in order to iterate over the cursor you can use the it command.
+If the cursor is assigned to a variable C you can do the following. c.hasNext() to see if there are more documents in the cursor and c.next() to show next batch and finally c.objsLeftInBatch() tells me how many objects remain in the cursor.
+Comparison Operators:
+Comparison operator lets us find things based on a criteria, like greater than , less than or not equal to. the way to use then is putting them inside an object inside de selection criteria
+find({“tomato.meter”: {$gt: 95}, actors: “juan”}) : this will find all movies with a meter greater then 95 and where one of the actors was “juan” - list of Comparison Operators: - $gt
+$gte - $lt
+$lte - $ne
+$in: the value is always an array - $nin: the value is always an array
+Element Operators:
+Element operators let os see if a document has a field and if the field os of certain type
+$exists: find({“tomato.meter”:{$exists: true}}) this will find al documents in the movies collections where the “tomato.meter” field does exist - $type: find( { _id: { $type: “string” } }) this will find all documents where the _id fields has a value of the type “string” - Logical Operators: - Logical operator are to to queries with or and or nor. They always need an Array as value - $and : find({ $and: [“tomato.meter”:{$exists: true},“tomato.meter”:{$ne: null}] }), the $and is explicit in most queries except when we need to specified criteria on the same key, like in here with tomato.meter
+$or : find({ $or: [“tomato.meter”:{$gt: 95},“meteoritic.meter”:{$gt: 88}] }) - Array Operators: - Array operators work on fields where the value is an array - $all : find({ countries: { $all: [“co”, “us”, “au”] } }) this will find all documents where the field countries has inside its array the values the values [“co”, “us”, “au”] - $elemtMatch find({ boxOffice: { $elementMatch: {country: “UK”, revenue: {$gt: 15} } } }) this finds all documents where the box-office is an array of object in where one of the objects has the value “UK” and revue gt than 15 - $size find({ countries: { $size: 1 } }) this finds all documents where the the countries field is an array with only 1 element.
+Updates:
+
+updateOne( {selection_critiria}, {update_operation} ), the selection criteria finds all documetns that match but updateOne only updates the first one that it finds. The update operations is specified inside the second parameter, this operation can use the operators the exist to update documents.
+updateOne({ title: “the martian” }, { set$ { poster: “some poster” } }) - updateMany - upserts - replaceOne - Update Operators: - $inc Increments the value of the field by the specified amount.
+$mul Multiplies the value of the field by the specified amount. - $rename Renames a field.
+$setOnInsert Sets the value of a field if an update results in an insert of a document. Has no effect on update operations that modify existing documents. - $set Sets the value of a field in a document.
+$unset Removes the specified field from a document. - $min Only updates the field if the specified value is less than the existing field value.
+$max Only updates the field if the specified value is greater than the existing field value. - $currentDate Sets the value of a field to current date, either as a Date or a Timestamp.
+Array Operators
+$: Acts as a placeholder to update the first element that matches the query condition in an update. - $addToSet: Adds elements to an array only if they do not already exist in the set.
+$pop: Removes the first or last item of an array. - $pullAll: Removes all matching values from an array.
+$pull: Removes all array elements that match a specified query. - $pushAll: Deprecated. Adds several items to an array.
+$push: Adds an item to an array. - Modifiers - $each: Modifies the $push and $addToSet operators to append multiple items for array updates. - $slice : Modifies the $push operator to limit the size of updated arrays. - $sort : Modifies the $push operator to reorder documents stored in an array. - $position : Modifies the $push operator to specify the position in the array to add elements.
+
+
+
+//////////
+@juan ,Thanks for your post, it's very usefull. I need to complete with a litle thing but important when we'll work with an array. We can use the index of the array elements in our request to selecl all document who have an array field and this field contain the value for eg "Gerôme" at the first position, we can use:
+
+db.find({"members.0" : "Gerôme"});

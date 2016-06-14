@@ -1,0 +1,30 @@
+<!doctype HTML>
+<html>
+  <head><title>Challenge Quiz</title></head>
+   <script type="text/javascript">
+    function clearThis(target){
+        target.value= "";
+    }
+    </script>
+  <body>
+     <!-- <form action="/favorite_fruit" method="POST">
+        <p>What is your favorite fruit?</p>
+        {% for fruit in fruits %}
+          <p>
+            <input type="radio" name="fruit" value="{{fruit}}"/>{{fruit}}
+          </p>
+        {% endfor %}
+        <input type="submit" value="Submit"/>
+     </form> -->
+
+     <form action="/adduser" method="POST">
+      Title:<br>
+      <input type="text" name="title" ><br><br>
+      Year:<br>
+      <input type="text" name="year" onfocus="clearThis(this)"><br><br>
+      Imdb:<br>
+      <input type="text" name="imdb" onfocus="clearThis(this)"><br><br><br>
+       <input type="submit" value="Submit"/>
+    </form>
+  </body>
+</html>

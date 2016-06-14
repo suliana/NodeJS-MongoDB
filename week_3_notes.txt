@@ -1,0 +1,63 @@
+Hi Everyone,
+
+Week 2 notes where appreciated by some, so I'm sharing week 3 notes as well. Please forgive me for spelling and grammar mistakes. Happy coding to everyone!
+
+mongoimport: Allows to restores a dump composed of human readable JSON
+
+mongorestore: Restores a dump of a binary file
+
+Cursors:
+
+A Cursors is just a description of the query to be perform, it doesn't actually perform a query, in order to return a query we have to tell how to consume it, ways to consume a cursor:
+
+toArray(): Convert all returning arguments to an array Less performance because it returns all documents at once
+forEach(): Different than the forEach method of javascript, it expects two arguments, the first one being the callback to be call for each document in the iteration, and the second one being the callback on what to do if there’s an error or when the loop is done. It is a lot more performant than toArray thanks to batch loading
+
+cursor.forEach( function(doc){ console.log(doc.name +" is a " + doc.category_code + ' company.') }, function(err){ assert.equal(null, err) db.close() } )
+
+.project(): this is the best way to use projections with a cursor, you just pass the projection object to it.
+
+$regex:
+
+You can specify if you want to add regex to a query query with case sensitive or insensitive by passing options
+
+{$regex: /[abc]/, options: “i”} , "i" for insensitive
+
+Dot Notation:
+
+In the node.js mongodb driver you can use dot notation both to access embedded documents, or documents that are inside arrays in a document.
+
+Example:
+
+Array with documents :
+
+offices : [ {code: “col”}, {code: “usa”} ]
+
+We can use office.code to access each array element
+
+Embedded document:
+
+offices : { name: “bogota”, code: “col" }
+
+Normal dot notation way to access embedded document: offices.name => "bogota"
+
+SKIPT, LIMIT, SORT:
+
+In order to use this operators we need to chain them to a cursor. they do not force a query to the database. MongoDb will always apply first the sort then skip and last limit.
+
+Sort
+ASC and DESC
+cursor.sort({founded_year: 1}) // ascending order 1
+cursor.sort({founded_year: -1}) // descending order -1
+Index
+If sorting by a field that does not have an index, mongo will delegate the sorting to memory and if the database is to big this is going to explote, so you need to add an index to the field in order to let mongo do the sorting in the database with the following command db.companies.createIndex({permalink: 1})
+Sorting by multiple fields
+In this case we need to pass an array to sort() instead of an object because and array guarantees the order in which we are going to sort by, with and object we don’t have that guarantee
+cursor.sort([ [‘founded_year’, 1], [‘employees’, -1] ]) we are sorting here by found year first in ascending order and then by number of employees in descending order
+Skip
+cursor.skip(10) // this will skip the first 10 documents
+Limit
+cursor.limit(10) // this will limit de query result to only 10 documents
+Searching for Duplicates:
+
+Search for a field name that exists and it’s not null and project that field and the ‘updated_at’ field then sort by that field name then compare the previous record to the current_one if they have the same values delete the current_one and then update the previous doc to the current_one

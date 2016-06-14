@@ -1,0 +1,308 @@
+>>> print("Hello World!" + "pin"))
+  File "<stdin>", line 1
+    print("Hello World!" + "pin"))
+                                 ^
+SyntaxError: invalid syntax
+>>> print("Hello World!" + "pin")
+Hello World!pin
+>>> print("hat" + "pin")
+hatpin
+>>> print(""\hat" + "pin")
+  File "<stdin>", line 1
+    print(""\hat" + "pin")
+                         ^
+SyntaxError: unexpected character after line continuation character
+>>> print("hat" + "pin").tostring
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'str' object has no attribute 'tostring'
+>>> a= [1,2,3]
+>>> a
+[1, 2, 3]
+>>>  print a[0]
+  File "<stdin>", line 1
+    print a[0]
+    ^
+IndentationError: unexpected indent
+>>>  print a[1]
+  File "<stdin>", line 1
+    print a[1]
+    ^
+IndentationError: unexpected indent
+>>> print a[0]
+1
+>>> print a[1]
+2
+>>> things = ["hammer", "nail","wall" ]
+>>> things
+['hammer', 'nail', 'wall']
+>>> a[0:2]
+[1, 2]
+>>> a[:]
+[1, 2, 3]
+>>> things = ['apples', 'orange', 'pear', 'grape', 'kiwi']
+>>> things
+['apples', 'orange', 'pear', 'grape', 'kiwi']
+>>> things[1:3]
+['orange', 'pear']
+>>> 'melon' in things
+False
+>>> 'apple' in things
+False
+>>> 'apples' in things
+True
+>>> if 'apples' in things:
+...     print("There is an appl")
+... 
+There is an appl
+>>> if 'banana' in things:
+...     print("There is an banana")
+... 
+>>> a{'name':'Bob', 'age':20}
+  File "<stdin>", line 1
+    a{'name':'Bob', 'age':20}
+     ^
+SyntaxError: invalid syntax
+>>> a={'name':'Bob', 'age':20}
+>>> a
+{'age': 20, 'name': 'Bob'}
+>>> a['name']='Jim'
+>>> b=a['name']
+>>> b
+'Jim'
+>>> a
+{'age': 20, 'name': 'Jim'}
+>>> a
+{'age': 20, 'name': 'Jim'}
+>>> b= 'steve'
+>>> a
+{'age': 20, 'name': 'Jim'}
+>>> a.keys
+<built-in method keys of dict object at 0x1007e7c58>
+>>> a.keys()
+['age', 'name']
+>>> a['name']
+'Jim'
+>>> color ={'sky' : 'blue', 'sea' : 'blue', 'earth': 'brown'}
+>>> color
+{'earth': 'brown', 'sky': 'blue', 'sea': 'blue'}
+>>> a = {'name': 'Suliana Abbay', 'interest' :['baking', 'designing', 'yoga']} 
+>>> a
+{'name': 'Suliana Abbay', 'interest': ['baking', 'designing', 'yoga']}
+>>> a['name']
+'Suliana Abbay'
+>>> a['interst']
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'interst'
+>>> a['interest']
+['baking', 'designing', 'yoga']
+>>> a['interest'][0]
+'baking'
+>>> a['interest'].append('swimming')
+>>> a
+{'name': 'Suliana Abbay', 'interest': ['baking', 'designing', 'yoga', 'swimming']}
+>>> things = {'animals' : ["dog", "cat", "zebra"]}
+>>> things
+{'animals': ['dog', 'cat', 'zebra']}
+>>> things[animals]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'animals' is not defined
+>>> things['animals']
+['dog', 'cat', 'zebra']
+>>> things['animals'][2]
+'zebra'
+>>> fruits =['apples', 'orange', 'pear', 'grape', 'kiwi']
+>>> new_fruits= []
+>>> for fruit in frruits:
+...     print fruit
+...     new_fruits.append(fruit)
+... print new_fruits
+  File "<stdin>", line 4
+    print new_fruits
+        ^
+SyntaxError: invalid syntax
+>>>  new_fruits
+  File "<stdin>", line 1
+    new_fruits
+    ^
+IndentationError: unexpected indent
+>>> print new_fruits
+[]
+>>> for x in fruits:
+...     print x
+...      new_fruits.append(x)
+  File "<stdin>", line 3
+    new_fruits.append(x)
+    ^
+IndentationError: unexpected indent
+>>> ^C^C
+KeyboardInterrupt
+>>> exit
+Use exit() or Ctrl-D (i.e. EOF) to exit
+>>> ^D
+sulianaabbay MongoDB $ touch for_loop.py
+sulianaabbay MongoDB $ vim for_loop.py 
+sulianaabbay MongoDB $ vim for_loop.py 
+sulianaabbay MongoDB $ python for_loop.py 
+apples
+orange
+pear
+grape
+kiwi
+['kiwi']
+sulianaabbay MongoDB $ vim for_loop.py 
+sulianaabbay MongoDB $ python for_loop.py 
+apples
+orange
+pear
+grape
+kiwi
+['apples', 'orange', 'pear', 'grape', 'kiwi']
+sulianaabbay MongoDB $ vim for_loop.py 
+sulianaabbay MongoDB $ python for_loop.py 
+apples
+orange
+pear
+grape
+kiwi
+['apples', 'orange', 'pear', 'grape', 'kiwi']
+8
+sulianaabbay MongoDB $ vim for_loop.py 
+sulianaabbay MongoDB $ python for_loop.py 
+apples
+orange
+pear
+grape
+kiwi
+['apples', 'orange', 'pear', 'grape', 'kiwi']
+8
+19
+sulianaabbay MongoDB $ vim for_loop.py 
+sulianaabbay MongoDB $ python for_loop.py 
+  File "for_loop.py", line 1
+    person = {'name' : 'Suliana Abbay', 'style_music' : 'world music', 'favorite_colour: 'green', 'hair': 'dark brown'}
+                                                                                              ^
+SyntaxError: invalid syntax
+sulianaabbay MongoDB $ vim for_loop.py 
+sulianaabbay MongoDB $ python for_loop.py 
+Key is hair value is dark brown
+Key is favorite_colour value is green
+Key is style_music value is world music
+Key is name value is Suliana Abbay
+sulianaabbay MongoDB $ vim for_loop.py 
+sulianaabbay MongoDB $ python for_loop.py 
+Key is hair value is dark brown
+Key is favorite_colour value is green
+Key is style_music value is world music
+Key is name value is Suliana Abbay
+red
+sulianaabbay MongoDB $ vim for_loop.py 
+sulianaabbay MongoDB $ python for_loop.py 
+  File "for_loop.py", line 14
+    while(i<len(fruit));
+                       ^
+SyntaxError: invalid syntax
+sulianaabbay MongoDB $ vim for_loop.py 
+sulianaabbay MongoDB $ python for_loop.py 
+Key is hair value is dark brown
+Key is favorite_colour value is green
+Key is style_music value is world music
+Key is name value is Suliana Abbay
+red
+Traceback (most recent call last):
+  File "for_loop.py", line 15, in <module>
+    printfruit[i]
+NameError: name 'printfruit' is not defined
+sulianaabbay MongoDB $ vim for_loop.py 
+sulianaabbay MongoDB $ python for_loop.py 
+Key is hair value is dark brown
+Key is favorite_colour value is green
+Key is style_music value is world music
+Key is name value is Suliana Abbay
+red
+apples
+orange
+pear
+grape
+kiwi
+sulianaabbay MongoDB $ vim for_loop.py 
+sulianaabbay MongoDB $ touch function_calls.py
+sulianaabbay MongoDB $ vim function_calls.py 
+sulianaabbay MongoDB $ vim function_calls.py 
+sulianaabbay MongoDB $ python function_calls.py 
+{'apples': 1}
+sulianaabbay MongoDB $ vim function_calls.py 
+sulianaabbay MongoDB $ python function_calls.py 
+Traceback (most recent call last):
+  File "function_calls.py", line 14, in <module>
+    counts= analyze_list(fruit) 
+  File "function_calls.py", line 8, in analyze_list
+    counts[iten]= counts[item]+1
+NameError: global name 'iten' is not defined
+sulianaabbay MongoDB $ vim function_calls.py 
+sulianaabbay MongoDB $ vim function_calls.py 
+sulianaabbay MongoDB $ python function_calls.py 
+  File "function_calls.py", line 8
+    counts[iten]= counts[item]+1
+    ^
+IndentationError: unexpected indent
+sulianaabbay MongoDB $ python function_calls.py 
+  File "function_calls.py", line 8
+    counts[iten]= counts[item]+1
+    ^
+IndentationError: unexpected indent
+sulianaabbay MongoDB $ python function_calls.py 
+['apples', 'orange', 'pear', 'apples', 'orange', 'pear', 'grape', 'kiwi']
+Traceback (most recent call last):
+  File "function_calls.py", line 16, in <module>
+    counts= analyze_list(fruit) 
+  File "function_calls.py", line 10, in analyze_list
+    counts[iten]= counts[item]+1
+NameError: global name 'item' is not defined
+sulianaabbay MongoDB $ python function_calls.py 
+  File "function_calls.py", line 10
+    counts[iten]= counts[item]+1
+         ^
+IndentationError: expected an indented block
+sulianaabbay MongoDB $ python function_calls.py 
+  File "function_calls.py", line 10
+    counts[item]= counts[item]+1
+         ^
+IndentationError: expected an indented block
+sulianaabbay MongoDB $ python function_calls.py 
+['apples', 'orange', 'pear', 'apples', 'orange', 'pear', 'grape', 'kiwi']
+Traceback (most recent call last):
+  File "function_calls.py", line 16, in <module>
+    counts = analyze_list(fruit) 
+  File "function_calls.py", line 8, in analyze_list
+    for item in l:
+NameError: global name 'l' is not defined
+sulianaabbay MongoDB $ python function_calls.py 
+['apples', 'orange', 'pear', 'apples', 'orange', 'pear', 'grape', 'kiwi']
+Traceback (most recent call last):
+  File "function_calls.py", line 16, in <module>
+    counts = analyze_list(fruit) 
+  File "function_calls.py", line 8, in analyze_list
+    for item in l:
+NameError: global name 'l' is not defined
+sulianaabbay MongoDB $ python function_calls.py 
+  File "function_calls.py", line 11
+    counts[item] = counts[item] + 1
+         ^
+IndentationError: expected an indented block
+sulianaabbay MongoDB $ python function_calls.py 
+['apples', 'orange', 'pear', 'apples', 'orange', 'pear', 'grape', 'kiwi']
+{'orange': 2, 'grape': 1, 'pear': 2, 'apples': 2, 'kiwi': 1}
+sulianaabbay MongoDB $ python function_calls.py 
+{'orange': 2, 'grape': 1, 'pear': 2, 'apples': 2, 'kiwi': 1}
+sulianaabbay MongoDB $ python exception_uncaught.py 
+Traceback (most recent call last):
+  File "exception_uncaught.py", line 3, in <module>
+    print 5 / 0
+ZeroDivisionError: integer division or modulo by zero
+sulianaabbay MongoDB $ python exception_caught.py 
+exception:  <type 'exceptions.ZeroDivisionError'> integer division or modulo by zero
+but life goes on
+sulianaabbay MongoDB $ 

@@ -1,0 +1,118 @@
+2016-05-03T08:08:30.506+0100 I CONTROL  [initandlisten] MongoDB starting : pid=30488 port=27018 dbpath=/data/rs2 64-bit host=Sulianas-MacBook-Pro.local
+2016-05-03T08:08:30.507+0100 I CONTROL  [initandlisten] db version v3.2.1
+2016-05-03T08:08:30.507+0100 I CONTROL  [initandlisten] git version: a14d55980c2cdc565d4704a7e3ad37e4e535c1b2
+2016-05-03T08:08:30.507+0100 I CONTROL  [initandlisten] allocator: system
+2016-05-03T08:08:30.507+0100 I CONTROL  [initandlisten] modules: none
+2016-05-03T08:08:30.507+0100 I CONTROL  [initandlisten] build environment:
+2016-05-03T08:08:30.507+0100 I CONTROL  [initandlisten]     distarch: x86_64
+2016-05-03T08:08:30.507+0100 I CONTROL  [initandlisten]     target_arch: x86_64
+2016-05-03T08:08:30.507+0100 I CONTROL  [initandlisten] options: { net: { port: 27018 }, processManagement: { fork: true }, replication: { oplogSizeMB: 64, replSet: "m101" }, storage: { dbPath: "/data/rs2", mmapv1: { smallFiles: true } }, systemLog: { destination: "file", path: "2.log" } }
+2016-05-03T08:08:30.508+0100 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=9G,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2016-05-03T08:08:30.807+0100 W STORAGE  [initandlisten] Detected configuration for non-active storage engine mmapv1 when current storage engine is wiredTiger
+2016-05-03T08:08:30.846+0100 I REPL     [initandlisten] Did not find local voted for document at startup;  NoMatchingDocument Did not find replica set lastVote document in local.replset.election
+2016-05-03T08:08:30.846+0100 I REPL     [initandlisten] Did not find local replica set configuration document at startup;  NoMatchingDocument Did not find replica set configuration document in local.system.replset
+2016-05-03T08:08:30.846+0100 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2016-05-03T08:08:30.846+0100 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/data/rs2/diagnostic.data'
+2016-05-03T08:08:30.939+0100 I NETWORK  [initandlisten] waiting for connections on port 27018
+2016-05-03T08:10:02.633+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63985 #1 (1 connection now open)
+2016-05-03T08:10:10.726+0100 I NETWORK  [conn1] end connection 127.0.0.1:63985 (0 connections now open)
+2016-05-03T08:10:22.911+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63993 #2 (1 connection now open)
+2016-05-03T08:10:22.914+0100 I NETWORK  [conn2] end connection 127.0.0.1:63993 (0 connections now open)
+2016-05-03T08:10:50.575+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63999 #3 (1 connection now open)
+2016-05-03T08:10:50.578+0100 I NETWORK  [conn3] end connection 127.0.0.1:63999 (0 connections now open)
+2016-05-03T08:13:05.911+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:64042 #4 (1 connection now open)
+2016-05-03T08:13:09.484+0100 I NETWORK  [conn4] end connection 127.0.0.1:64042 (0 connections now open)
+2016-05-03T08:13:14.494+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:64045 #5 (1 connection now open)
+2016-05-03T08:13:14.496+0100 I NETWORK  [conn5] end connection 127.0.0.1:64045 (0 connections now open)
+2016-05-03T08:14:06.730+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:64055 #6 (1 connection now open)
+2016-05-03T08:14:06.732+0100 I REPL     [conn6] replSetInitiate admin command received from client
+2016-05-03T08:14:06.736+0100 I REPL     [conn6] replSetInitiate config object with 3 members parses ok
+2016-05-03T08:14:06.738+0100 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to Sulianas-MacBook-Pro.local:27017
+2016-05-03T08:14:06.738+0100 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to Sulianas-MacBook-Pro.local:27019
+2016-05-03T08:14:06.738+0100 I REPL     [conn6] ******
+2016-05-03T08:14:06.738+0100 I REPL     [conn6] creating replication oplog of size: 64MB...
+2016-05-03T08:14:06.739+0100 I NETWORK  [initandlisten] connection accepted from 192.168.1.4:64063 #7 (2 connections now open)
+2016-05-03T08:14:06.739+0100 I NETWORK  [initandlisten] connection accepted from 192.168.1.4:64065 #8 (3 connections now open)
+2016-05-03T08:14:06.760+0100 I STORAGE  [conn6] Starting WiredTigerRecordStoreThread local.oplog.rs
+2016-05-03T08:14:06.760+0100 I STORAGE  [conn6] The size storer reports that the oplog contains 0 records totaling to 0 bytes
+2016-05-03T08:14:06.760+0100 I STORAGE  [conn6] Scanning the oplog to determine where to place markers for truncation
+2016-05-03T08:14:06.870+0100 I REPL     [conn6] ******
+2016-05-03T08:14:06.926+0100 I REPL     [ReplicationExecutor] New replica set config in use: { _id: "m101", version: 1, protocolVersion: 1, members: [ { _id: 0, host: "Sulianas-MacBook-Pro.local:27017", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, tags: {}, slaveDelay: 0, votes: 1 }, { _id: 1, host: "Sulianas-MacBook-Pro.local:27018", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, tags: {}, slaveDelay: 0, votes: 1 }, { _id: 2, host: "Sulianas-MacBook-Pro.local:27019", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, tags: {}, slaveDelay: 0, votes: 1 } ], settings: { chainingAllowed: true, heartbeatIntervalMillis: 2000, heartbeatTimeoutSecs: 10, electionTimeoutMillis: 10000, getLastErrorModes: {}, getLastErrorDefaults: { w: 1, wtimeout: 0 } } }
+2016-05-03T08:14:06.926+0100 I REPL     [ReplicationExecutor] This node is Sulianas-MacBook-Pro.local:27018 in the config
+2016-05-03T08:14:06.926+0100 I REPL     [ReplicationExecutor] transition to STARTUP2
+2016-05-03T08:14:06.926+0100 I REPL     [conn6] Starting replication applier threads
+2016-05-03T08:14:06.927+0100 I COMMAND  [conn6] command local.oplog.rs command: replSetInitiate { replSetInitiate: { _id: "m101", members: [ { _id: 0.0, host: "Sulianas-MacBook-Pro.local:27017" }, { _id: 1.0, host: "Sulianas-MacBook-Pro.local:27018" }, { _id: 2.0, host: "Sulianas-MacBook-Pro.local:27019" } ] } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:22 locks:{ Global: { acquireCount: { r: 5, w: 3, W: 2 }, acquireWaitCount: { W: 1 }, timeAcquiringMicros: { W: 107 } }, Database: { acquireCount: { w: 2, W: 1 } }, Metadata: { acquireCount: { w: 1 } }, oplog: { acquireCount: { w: 2 } } } protocol:op_command 194ms
+2016-05-03T08:14:06.927+0100 I REPL     [ReplicationExecutor] transition to RECOVERING
+2016-05-03T08:14:06.927+0100 I REPL     [ReplicationExecutor] Member Sulianas-MacBook-Pro.local:27019 is now in state STARTUP
+2016-05-03T08:14:06.927+0100 I REPL     [ReplicationExecutor] Member Sulianas-MacBook-Pro.local:27017 is now in state STARTUP
+2016-05-03T08:14:06.928+0100 I REPL     [ReplicationExecutor] transition to SECONDARY
+2016-05-03T08:14:06.931+0100 I NETWORK  [conn6] end connection 127.0.0.1:64055 (2 connections now open)
+2016-05-03T08:14:08.746+0100 I NETWORK  [initandlisten] connection accepted from 192.168.1.4:64068 #9 (3 connections now open)
+2016-05-03T08:14:08.747+0100 I NETWORK  [conn9] end connection 192.168.1.4:64068 (2 connections now open)
+2016-05-03T08:14:08.747+0100 I NETWORK  [initandlisten] connection accepted from 192.168.1.4:64069 #10 (4 connections now open)
+2016-05-03T08:14:08.747+0100 I NETWORK  [conn10] end connection 192.168.1.4:64069 (2 connections now open)
+2016-05-03T08:14:10.194+0100 I NETWORK  [initandlisten] connection accepted from 192.168.1.4:64075 #11 (3 connections now open)
+2016-05-03T08:14:10.202+0100 I NETWORK  [initandlisten] connection accepted from 192.168.1.4:64076 #12 (4 connections now open)
+2016-05-03T08:14:10.231+0100 I NETWORK  [conn11] end connection 192.168.1.4:64075 (3 connections now open)
+2016-05-03T08:14:10.242+0100 I NETWORK  [conn12] end connection 192.168.1.4:64076 (2 connections now open)
+2016-05-03T08:14:11.929+0100 I REPL     [ReplicationExecutor] Member Sulianas-MacBook-Pro.local:27019 is now in state SECONDARY
+2016-05-03T08:14:11.929+0100 I REPL     [ReplicationExecutor] Member Sulianas-MacBook-Pro.local:27017 is now in state SECONDARY
+2016-05-03T08:14:18.096+0100 I REPL     [ReplicationExecutor] Starting an election, since we've seen no PRIMARY in the past 10000ms
+2016-05-03T08:14:18.096+0100 I REPL     [ReplicationExecutor] conducting a dry run election to see if we could be elected
+2016-05-03T08:14:18.156+0100 I REPL     [ReplicationExecutor] dry election run succeeded, running for election
+2016-05-03T08:14:18.218+0100 I REPL     [ReplicationExecutor] election succeeded, assuming primary role in term 1
+2016-05-03T08:14:18.218+0100 I REPL     [ReplicationExecutor] transition to PRIMARY
+2016-05-03T08:14:18.218+0100 W REPL     [ReplicationExecutor] The liveness timeout does not match callback handle, so not resetting it.
+2016-05-03T08:14:18.219+0100 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to Sulianas-MacBook-Pro.local:27019
+2016-05-03T08:14:18.220+0100 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to Sulianas-MacBook-Pro.local:27019
+2016-05-03T08:14:18.954+0100 I REPL     [rsSync] transition to primary complete; database writes are now permitted
+2016-05-03T08:14:20.850+0100 I NETWORK  [initandlisten] connection accepted from 192.168.1.4:64083 #13 (3 connections now open)
+2016-05-03T08:14:20.851+0100 I NETWORK  [conn13] end connection 192.168.1.4:64083 (2 connections now open)
+2016-05-03T08:14:20.852+0100 I NETWORK  [initandlisten] connection accepted from 192.168.1.4:64084 #14 (3 connections now open)
+2016-05-03T08:14:20.853+0100 I NETWORK  [initandlisten] connection accepted from 192.168.1.4:64086 #15 (4 connections now open)
+2016-05-03T08:14:20.861+0100 I NETWORK  [initandlisten] connection accepted from 192.168.1.4:64087 #16 (5 connections now open)
+2016-05-03T08:14:20.861+0100 I NETWORK  [conn16] end connection 192.168.1.4:64087 (4 connections now open)
+2016-05-03T08:14:20.862+0100 I NETWORK  [initandlisten] connection accepted from 192.168.1.4:64088 #17 (5 connections now open)
+2016-05-03T08:14:20.862+0100 I NETWORK  [initandlisten] connection accepted from 192.168.1.4:64090 #18 (6 connections now open)
+2016-05-03T08:15:06.121+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:64104 #19 (7 connections now open)
+2016-05-03T08:17:48.536+0100 I NETWORK  [conn19] end connection 127.0.0.1:64104 (6 connections now open)
+2016-05-03T08:18:13.112+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:64188 #20 (7 connections now open)
+2016-05-03T08:19:41.868+0100 I NETWORK  [conn20] end connection 127.0.0.1:64188 (6 connections now open)
+2016-05-03T08:23:35.235+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T08:24:25.568+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:64315 #21 (7 connections now open)
+2016-05-03T08:26:29.958+0100 I NETWORK  [conn21] end connection 127.0.0.1:64315 (6 connections now open)
+2016-05-03T08:31:14.567+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:64419 #22 (7 connections now open)
+2016-05-03T08:31:39.894+0100 I NETWORK  [conn22] end connection 127.0.0.1:64419 (6 connections now open)
+2016-05-03T08:33:48.849+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:64484 #23 (7 connections now open)
+2016-05-03T08:34:08.615+0100 I NETWORK  [conn23] end connection 127.0.0.1:64484 (6 connections now open)
+2016-05-03T08:38:40.591+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T08:53:44.315+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T09:08:47.112+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T09:23:49.277+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T09:32:06.686+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:52290 #24 (7 connections now open)
+2016-05-03T09:35:04.084+0100 I NETWORK  [conn24] end connection 127.0.0.1:52290 (6 connections now open)
+2016-05-03T09:38:53.491+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T09:38:55.674+0100 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:52448 #25 (7 connections now open)
+2016-05-03T09:38:55.676+0100 I NETWORK  [initandlisten] connection accepted from 192.168.1.4:52452 #26 (8 connections now open)
+2016-05-03T09:38:55.676+0100 I NETWORK  [conn25] end connection 127.0.0.1:52448 (6 connections now open)
+2016-05-03T09:39:12.826+0100 I NETWORK  [conn26] end connection 192.168.1.4:52452 (6 connections now open)
+2016-05-03T09:53:58.076+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T10:09:03.048+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T10:24:07.526+0100 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.1.4, "nodename nor servname provided, or not known"), (192.168.1.4, "nodename nor servname provided, or not known") ]
+2016-05-03T10:31:13.474+0100 I CONTROL  [signalProcessingThread] got signal 15 (Terminated: 15), will terminate after current cmd ends
+2016-05-03T10:31:13.474+0100 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+2016-05-03T10:31:13.476+0100 I REPL     [signalProcessingThread] Stopping replication applier threads
+2016-05-03T10:31:14.982+0100 I CONTROL  [signalProcessingThread] now exiting
+2016-05-03T10:31:14.982+0100 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2016-05-03T10:31:14.982+0100 I NETWORK  [signalProcessingThread] closing listening socket: 6
+2016-05-03T10:31:14.982+0100 I NETWORK  [signalProcessingThread] closing listening socket: 7
+2016-05-03T10:31:14.983+0100 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-27018.sock
+2016-05-03T10:31:14.983+0100 I NETWORK  [signalProcessingThread] shutdown: going to flush diaglog...
+2016-05-03T10:31:14.983+0100 I NETWORK  [signalProcessingThread] shutdown: going to close sockets...
+2016-05-03T10:31:14.983+0100 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+2016-05-03T10:31:14.983+0100 I NETWORK  [conn14] end connection 192.168.1.4:64084 (5 connections now open)
+2016-05-03T10:31:14.983+0100 I NETWORK  [conn17] end connection 192.168.1.4:64088 (5 connections now open)
+2016-05-03T10:31:14.983+0100 I NETWORK  [conn8] end connection 192.168.1.4:64065 (5 connections now open)
+2016-05-03T10:31:14.983+0100 I NETWORK  [conn7] end connection 192.168.1.4:64063 (5 connections now open)
+2016-05-03T10:31:15.911+0100 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2016-05-03T10:31:15.911+0100 I CONTROL  [signalProcessingThread] dbexit:  rc: 0
